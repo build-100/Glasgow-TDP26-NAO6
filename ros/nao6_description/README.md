@@ -18,14 +18,26 @@ or ROS 2 launch files are used.
 |---|---|
 | `NAOH25V60_source.urdf` | Unmodified provenance copy; original absolute mesh paths are not portable |
 | `nao6_full.urdf` | Portable package mesh paths; all original joints retained |
-| `nao6_simplified.urdf` | Same model, with only hand actuators/finger/thumb joints fixed at zero |
+| `nao6_simplified.urdf` | Same model, with hand actuators/finger/thumb joints and both wrist-yaw joints fixed at zero |
 | `nao6_collision_visual.urdf` | Simplified kinematics/inertia/contact model, with collision primitives used as visuals for resource-independent inspection |
 
 The simplified model retains all links and original inertias/collisions. It
-preserves both legs, hip mimic relationship, both arms including wrists, head
-movement and camera/IMU frames. Fixing hands reduces independent moving joints
-from 25 to 23; it does not freeze shoulder/elbow balance or recovery motion.
-The full model remains available for controllers that expect hand joints.
+preserves both legs, hip mimic relationship, shoulder/elbow movement, head
+movement and camera/IMU frames. Fixing hands and wrist yaw reduces independent
+moving joints from 25 to 21: 11 coupled-leg DOFs, 8 shoulder/elbow DOFs and 2 head
+DOFs. It does not freeze arm balance or recovery motion. The full model remains
+available for controllers that expect hand or wrist joints.
+
+The inspected upstream walking, forward-kick and front/back get-up reference
+trajectories have no wrist-yaw channels. This motivates the optional wrist lock,
+but does not validate those trajectories for Gazebo/real NAO. In particular,
+upstream recovery references may command the two hip-yaw-pitch entries differently;
+the real coupling must be respected. No reference motion is copied as a working
+controller. If the selected backend needs wrists, use the full description.
+
+Both upper and lower RGB camera frames remain attached to the moving head.
+They are not assumed to form a calibrated stereo pair. Frame geometry alone
+does not implement visual detection or absolute localisation.
 
 The collision-visual variant is deliberately a coarse structure view. It
 preserves original collision geometry and does not pretend to be the detailed
@@ -50,7 +62,7 @@ python3 -m unittest discover -s tests -v
 ```
 
 The generator checks the source hash, changes portable mesh paths, removes empty
-texture elements, optionally fixes hand/finger joints, and writes a machine-readable
+texture elements, optionally fixes hand/finger/wrist joints, and writes a machine-readable
 adaptation report. It preserves the original source. Generated models are included
 so the package does not require regeneration just to inspect it.
 
@@ -96,8 +108,9 @@ state publisher is connected to this physical scene. The ball uses provisional
 dimensions/material values; validate actual dynamics before using it as evidence.
 
 The next integration task is a validated NAO motion backend for STAND/STOP,
-WALK, HEAD_LOOK, KICK_FORWARD and GET_UP. RECEIVE is a move/stop/wait/re-detect
-composite. `ros_control` alone would not supply balanced motion. Prefer available
+WALK, HEAD_LOOK, KICK_FORWARD and GET_UP. There is no separate RECEIVE skill:
+wait until the ball stops, approach/re-detect with WALK/HEAD_LOOK, align, STOP,
+then KICK_FORWARD. `ros_control` alone would not supply balanced motion. Prefer available
 school software; firmware/controller compatibility remains unresolved.
 
 The global RViz planning demo and local Gazebo skill demos can run independently.

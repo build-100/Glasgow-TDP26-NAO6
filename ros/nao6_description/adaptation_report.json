@@ -3,13 +3,15 @@
   "runtime_validated": false,
   "variants": {
     "full": {
-      "sha256": "fbb005ca9e763abf44ce43a32264d1b39d93735bf40ad1741102b9717a0220c0",
-      "fixed_hand_joints": [],
+      "sha256": "75eaa459f621829bf4e1fb9347846032dd98212135d1b210a5d7213a5f8b6567",
+      "fixed_hand_and_wrist_joints": [],
       "collision_based_visuals": false
     },
     "simplified": {
-      "sha256": "6bbaede7b66678045f075659023ec8a541b247fcc2e3310b4bf374ad9907c4e5",
-      "fixed_hand_joints": [
+      "sha256": "5dd97a1a2d233b9de4771f1770e95d37479780283e61309ad5a675c2e77aab78",
+      "fixed_hand_and_wrist_joints": [
+        "LWristYaw",
+        "RWristYaw",
         "LFinger11",
         "LFinger12",
         "LFinger13",
@@ -32,8 +34,10 @@
       "collision_based_visuals": false
     },
     "collision_visual": {
-      "sha256": "9ac95dc450811a535781f9c317b0d6596352ad9a6c4d30c7f2e23c2ff65f9a68",
-      "fixed_hand_joints": [
+      "sha256": "c568734d6e1311d80debef273272b250ed8b0ea43d9d014a6b4df237fc0eb0b7",
+      "fixed_hand_and_wrist_joints": [
+        "LWristYaw",
+        "RWristYaw",
         "LFinger11",
         "LFinger12",
         "LFinger13",
