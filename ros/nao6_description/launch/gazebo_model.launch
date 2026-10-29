@@ -1,0 +1,15 @@
+<launch>
+  <!-- No gait/controller: inspect paused; do not claim skill execution. -->
+  <arg name="paused" default="true" />
+  <arg name="gui" default="true" />
+  <arg name="spawn_z" default="0.36" />
+  <param name="robot_description" textfile="$(find nao6_description)/urdf/nao6_collision_visual.urdf" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find nao6_description)/worlds/model_inspection.world" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="use_sim_time" value="true" />
+  </include>
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_nao6" output="screen"
+    args="-urdf -param robot_description -model nao6 -x 0 -y 0 -z $(arg spawn_z)" />
+</launch>
