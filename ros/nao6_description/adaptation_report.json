@@ -1,0 +1,59 @@
+{
+  "source_sha256": "327dce62542ecd1327acf3fa7c5ec7b59274d44ce6c09a9ade3417cc39f132d6",
+  "runtime_validated": false,
+  "variants": {
+    "full": {
+      "sha256": "fbb005ca9e763abf44ce43a32264d1b39d93735bf40ad1741102b9717a0220c0",
+      "fixed_hand_joints": [],
+      "collision_based_visuals": false
+    },
+    "simplified": {
+      "sha256": "6bbaede7b66678045f075659023ec8a541b247fcc2e3310b4bf374ad9907c4e5",
+      "fixed_hand_joints": [
+        "LFinger11",
+        "LFinger12",
+        "LFinger13",
+        "LFinger21",
+        "LFinger22",
+        "LFinger23",
+        "LHand",
+        "LThumb1",
+        "LThumb2",
+        "RFinger11",
+        "RFinger12",
+        "RFinger13",
+        "RFinger21",
+        "RFinger22",
+        "RFinger23",
+        "RHand",
+        "RThumb1",
+        "RThumb2"
+      ],
+      "collision_based_visuals": false
+    },
+    "collision_visual": {
+      "sha256": "9ac95dc450811a535781f9c317b0d6596352ad9a6c4d30c7f2e23c2ff65f9a68",
+      "fixed_hand_joints": [
+        "LFinger11",
+        "LFinger12",
+        "LFinger13",
+        "LFinger21",
+        "LFinger22",
+        "LFinger23",
+        "LHand",
+        "LThumb1",
+        "LThumb2",
+        "RFinger11",
+        "RFinger12",
+        "RFinger13",
+        "RFinger21",
+        "RFinger22",
+        "RFinger23",
+        "RHand",
+        "RThumb1",
+        "RThumb2"
+      ],
+      "collision_based_visuals": true
+    }
+  }
+}

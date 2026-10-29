@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>nao6_description</name>
+  <version>0.1.0</version>
+  <description>Selected NAO6 descriptions and standalone model-inspection launches.</description>
+  <maintainer email="build-100@users.noreply.github.com">build-100</maintainer>
+  <license>Apache-2.0 (upstream model assets; see LICENSE.upstream)</license>
+  <license>LicenseRef-Team-Educational-Use (original project files; see repository LICENSE.txt)</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+</package>
