@@ -1,0 +1,20 @@
+Original project material: restricted educational use
+
+Copyright (c) 2026 the respective Glasgow-TDP26-NAO6 project contributors.
+All rights reserved except as expressly granted below or required by law.
+
+The repository owner may authorise named members of the project team in writing
+to use, run and modify the original project code and documentation for this
+ENG5325 group project, including its demonstrations and assessed submissions.
+That authorisation does not grant general reuse or redistribution rights.
+Other use requires permission from the relevant copyright holder.
+
+Public access does not make this project open source. Rights to view and fork
+the repository granted under GitHub's applicable Terms of Service are not
+restricted by this notice. Public files cannot be made confidential by this notice.
+
+Third-party code, models, assets and notices retain their own licences and are
+excluded from the restrictions above. See THIRD_PARTY_NOTICES.md. This notice
+does not grant rights in third-party material or in material a contributor does
+not own. The material is supplied without warranties, to the extent permitted
+by applicable law.

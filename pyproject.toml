@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61,<76"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glasgow-tdp26-nao6"
+version = "0.1.0"
+description = "Minimal nine-region NAO6 football planning foundation"
+requires-python = ">=3.8"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
