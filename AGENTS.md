@@ -18,3 +18,11 @@ trapping is required by this simplified team plan.
 Preserve upstream model licences and provenance. Original Python code is covered
 by the repository's restricted-use notice; imported/adapted model assets retain
 their upstream terms. Label static checks separately from runtime validation.
+
+The team leader authorised publication of the preserved V1/V2 global demo packages
+on 2026-11-05. Keep them under demos/v1 and demos/v2, with their own launch/config
+and evidence. V2 uses fixed routes and P=0.40, with at most one eligible contest
+per round and selected seed 15. A turnover ends T; the counterattack begins at T+1.
+Do not present either scripted edition as trained-policy or physical skill validation.
+Both packages use the existing collision-visual NAO6 model and hide path displays.
+Future changes must preserve the published recordings and separate edition evidence.
