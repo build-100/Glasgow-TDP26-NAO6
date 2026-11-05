@@ -1,0 +1,161 @@
+ENG5325 NAO6 GLOBAL DEMO
+Team leader: Lizhou Zhu
+
+PURPOSE AND COURSE SCOPE
+This is a first ROS integration milestone for the existing Glasgow-TDP26-NAO6
+framework. It shows two four-player NAO6 teams on the course's 9 x 6 m field,
+the agreed nine-region graph, robot poses, paths, the ball and macro-step phases.
+It provides a reproducible rosbag recording/playback example.
+
+It is a scripted kinematic scenario, not a trained policy, an autonomous football
+match or a validated physical walk/kick. Blue players and both goalkeepers are
+stationary in this first integration test. Red players demonstrate a settle ->
+approach -> align -> stop -> kick -> roll -> settle sequence. No RECEIVE skill
+is introduced. One nominal 2 m kick range is used, pending real calibration;
+the last roll is truncated when the ball crosses the goal line. This is a test
+parameter, not a claim that a real NAO6 kick reaches 2 m.
+
+The course requires behavioural simulation and hardware testing. This milestone
+does not replace either the eventual strategy comparison or the independent
+Gazebo/real-robot work on walking, kicking and recovery. Playback presents
+previously generated messages; it is not a new autonomous robot execution.
+
+MODEL AND LAUNCH PROVENANCE
+Repository: https://github.com/build-100/Glasgow-TDP26-NAO6
+Base model: ros/nao6_description/urdf/nao6_collision_visual.urdf
+Base inspection launch: ros/nao6_description/launch/display.launch
+Base RViz display: ros/nao6_description/rviz/model.rviz
+This package extends that single-model architecture to eight separate instances.
+Robot IDs are red1, red2, red3, red4, blue1, blue2, blue3 and blue4.
+No smartcar launch, wheeled-robot URDF or wheel controller is used.
+
+The chosen collision-visual NAO6 model is a coarse humanoid structure view.
+The eight generated URDFs only add unique link/joint/mimic prefixes and team
+colours. Inertias, collision shapes, joints, camera/IMU frames and hip coupling
+are preserved. Static joint angles are the existing inspection pose, not a gait.
+See models/adaptation.json for the source hash and models/LICENSE.upstream for
+the third-party licence. The original material remains restricted to authorised
+team use under LICENSE.txt. This edition is shared with the authorised team in the public project repository.
+
+PLATFORM AND COORDINATES
+Ubuntu 20.04 / ROS Noetic / RViz. Gazebo Classic 11 remains a separate workstream.
+ROS map origin is the lower-left field corner, as in repository configs/field.json.
+All standard ROS poses, paths and markers use map. Internal scripted coordinates
+and JSON scenario state use the explicitly labelled centre-relative convention
+field_center: add (4.5, 3) to obtain map coordinates. This internal label is not
+an extra published TF frame. RViz Fixed Frame and view Target Frame are map.
+loc_pose is the ground-projected planning pose. The NAO torso base_link is 0.34 m
+above that plane for inspection. This height is not a validated balance estimate.
+
+NECESSARY TOPICS
+/map                           nav_msgs/OccupancyGrid: static known free field
+/field_markings                MarkerArray: fixed Figure 3 green/white pitch
+/planning_graph                MarkerArray: separately switchable nine-region graph
+/loc_pose_red1 ... /loc_pose_blue4       geometry_msgs/PoseStamped
+/path_red1 ... /path_blue4      nav_msgs/Path: recorded; RViz display DISABLED
+/joint_states_red1 ... /joint_states_blue4  JointState: inspection angles
+/ball/pose                     geometry_msgs/PoseStamped
+/team_markers                  visualization_msgs/MarkerArray
+/tf and /tf_static             unique NAO6 body, camera and IMU transforms
+/demo/state and /demo/events   std_msgs/String: JSON macro step and phase data
+/clock                        supplied during rosbag playback
+Robot-local topic names use suffixes; TF frames use unique prefixes, for example
+red1/base_link and blue4/CameraTop. robot_description is a parameter rather than
+a topic, kept under /red1/robot_description through /blue4/robot_description.
+The JSON scenario coordinates explicitly use field_center; standard ROS messages
+and display markers use map. Camera/IMU frames exist but no sensor images/measurements
+or visual localisation are generated. Do not add fake scan/SLAM topics.
+
+FILES
+launch/models.launch           eight robot_description parameters; optional RSP
+launch/live.launch             fixed pitch, models, state publishers, ROS adapter
+launch/replay.launch           model parameters and RViz only; NO live publisher
+rviz/nao6_global.rviz           eight models, pose arrows and markers; paths hidden
+scripts/scenario.py            deterministic local scenario, no ROS dependency
+scripts/global_demo.py         ROS message/TF adapter, replaceable later
+scripts/field_map.py           latched static map, course markings and graph
+scripts/run_evidence.py        record -a, stop live nodes, play --clock, verify
+scripts/show_replay.py         convenient playback with automatic cleanup
+scripts/verify_replay.py       message comparison and forty NAO6 TF-chain checks
+scripts/audit_runtime.py       verifies eight loaded URDFs and joint-topic wiring
+tests/test_scenario.py         graph, settlement, spacing and model invariants
+models/                       source copy, provenance, field configuration
+urdf/                         eight generated NAO6 descriptions
+evidence/                     recorded runs, validation, screenshots and video
+
+FIXED PITCH DISPLAY
+The course specification Figure 3 and Table 1 define the shape and dimensions:
+9 x 6 m playing area; 1 m border; 0.6 m deep, 2.6 m wide goals; 1 x 3 m goal
+areas; 2 x 5 m penalty areas; 1.5 m penalty distance; 1.5 m centre-circle diameter.
+The green display uses RGB (0,153,0) with white markings, matching the figure's
+appearance. Dimension arrows/letters from the engineering drawing are omitted.
+The occupancy grid includes the border: 11 x 8 m at 0.05 m resolution, origin
+(-1,-1) in map. Field markings are landmarks, not occupied obstacle walls.
+OccupancyGrid does not encode RGB colour. /map is retained for spatial semantics;
+its RViz alpha is zero, while /field_markings displays the fixed green/white map
+in the same frame. Both are latched and recorded. The planning overlay can be
+unticked without changing the pitch. No SLAM-generated map is claimed.
+
+ON THE TARGET UBUNTU COMPUTER
+The package is at ~/Glasgow-TDP26-NAO6/demos/v1.
+Do not source an unrelated smartcar workspace.
+
+Automatic fresh record/play verification (about two minutes):
+  source /opt/ros/noetic/setup.bash
+  cd ~/Glasgow-TDP26-NAO6/demos/v1
+  chmod +x scripts/*.py
+  python3 scripts/run_evidence.py
+It uses an isolated master on port 11432 and stops only its own processes.
+It aborts if that port is already occupied. No sudo or catkin build is needed
+for direct source-space use. The GUI capture settings target the tested 1920 x
+1080 desktop. Update the capture geometry if the display resolution changes.
+
+Replay an existing run (replace RUN_DIRECTORY with the dated evidence folder):
+  source /opt/ros/noetic/setup.bash
+  cd ~/Glasgow-TDP26-NAO6/demos/v1
+  python3 scripts/show_replay.py evidence/RUN_DIRECTORY/nao6_global.bag
+Append --loop for a meeting display. Ctrl+C stops the player, RViz and its master.
+
+Manual commands, useful for explaining rosbag (use the same environment in
+each terminal; these are an alternative to the automatic runner):
+  source /opt/ros/noetic/setup.bash
+  export ROS_PACKAGE_PATH=$HOME/Glasgow-TDP26-NAO6/demos:$ROS_PACKAGE_PATH
+  export ROS_MASTER_URI=http://127.0.0.1:11432
+  export ROS_HOSTNAME=127.0.0.1
+  unset ROS_IP
+  export DISABLE_ROS1_EOL_WARNINGS=1
+
+Terminal 1: roscore -p 11432
+Terminal 2: rosbag record -a -O /absolute/path/nao6_demo.bag
+Terminal 3: roslaunch eng5325_global_demo live.launch
+After the scenario ends, Ctrl+C in terminal 2 to finalise the bag, then Ctrl+C
+in terminal 3 to stop all live publishers. Keep the master running.
+Terminal 3: roslaunch eng5325_global_demo replay.launch
+Terminal 2: rosbag play --clock /absolute/path/nao6_demo.bag
+
+Keep URDFs, robot_description parameters, launch files and RViz configuration
+with the bag: a bag records messages, not all configuration or Gazebo physics.
+The replay launch restores model parameters; recorded /tf and /tf_static supply
+transforms, so replay deliberately does not run robot_state_publisher again.
+
+NEXT CONNECTIONS WITH TEAM MODULES
+Replace scripted loc_pose/ball observations with localisation and perception
+outputs under the same map convention. Replace timed skill outcomes with the
+shared execution module's completion/timeout status. Then connect the minimal
+high-level strategy interface. Keep the private reward/training implementation
+separate from the public model repository. Do not treat this first script as
+evidence that cooperation already outperforms the independent baseline.
+
+VERIFIED RUN: 2026-11-05
+evidence/20261105_212347 contains the latest verified recording and replay video.
+Eight loaded models matched their generated URDFs. Each has 131 links and 21
+independent moving joints. Inertias, contact geometry and joint limits match the
+selected repository source. All eight state publishers subscribe to the correct
+joint-state suffix topics. RViz has eight enabled RobotModels and zero enabled
+Path displays. Forty base/camera/IMU TF chains were found during replay.
+Each of the eight pose streams had 961 recorded and 961 identical replayed
+messages; ball/state streams also matched. The static map and both fixed marker
+layers each replayed their recorded message exactly. Live publishers were stopped
+before playback. See runtime_model_check.json and verification.json in that run.
+evidence/github_source_check.json records byte-identical SHA256 checks against
+the public GitHub default model, simplified model, display launch and pose config.
