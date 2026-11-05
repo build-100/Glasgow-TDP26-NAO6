@@ -1,0 +1,164 @@
+ENG5325 NAO6 DEMO - SECOND EDITION
+Team leader: Lizhou Zhu
+
+1. PURPOSE
+This version follows fixed high-level actions and routes for BOTH teams. It
+intentionally defers greedy versus cooperative learned-policy comparison.
+Six field players share the same scripted local execution sequence. Both
+keepers remain stationary and have no effect on goals or contest outcomes.
+
+Round 1: red attacks, blue defends, red retains possession at one contest and scores.
+Round 2: blue starts with the ball and attacks; red wins the single contest,
+then counterattacks and scores. The displayed final score is RED 2 : 0 BLUE.
+
+2. KEEP THE AGREED SIMPLE MODEL
+Nine regions in a fixed 3 x 3 graph; immediate horizontal, vertical and diagonal
+neighbours only. Each macro step T records a HOLD_REGION or MOVE_TO_NEIGHBOUR
+command for every field player. In-region adjustment is handled by the same
+local execution stub. A turnover ends T; the new owner starts T+1.
+
+Shared sequence:
+  Ball settled -> head look -> orient -> walk/position -> align -> stop
+  -> optional one-shot contest -> kick -> ball rolls -> ball settles.
+All players hold during ball rolling. There is no RECEIVE skill. The ball
+moves in straight lines, with the same nominal 2 m range per kick. Goal shots
+are truncated at the goal line. The range remains a provisional calibration
+assumption, not a validated physical NAO6 result. The selected foot/strength
+interface is unchanged; the robot turns to change kick direction.
+
+Round setup is explicitly labelled ROUND_SETUP_NOT_IN_PLAY. Robot and ball
+positions are reinitialised between the two independent showcase rounds.
+That reset is not an in-play movement, pass or physical robot action.
+
+3. CONTEST RULE
+P = 0.40. Eligibility is checked after the ball has stopped and positioning
+has completed. The ball owner and an opposing FIELD PLAYER must share the
+ball's region. Goalkeepers are excluded. If several rivals are eligible, the
+nearest one is the candidate. Draw u uniformly from [0,1); turnover iff u < P.
+
+For this two-round demonstration, each round permits at most ONE eligible
+contest evaluation. The opportunity is consumed after either result. There
+is no frame-by-frame reroll, repeated trial in the same T, or immediate steal-back
+while the players remain together. A second round gets a new opportunity.
+
+The presentation fixture uses seed 15, selected to reproduce the requested story:
+  Round 1 / T2 / node N4: RED2 vs BLUE1; u=0.965242; RED2 retains possession.
+  Round 2 / T6 / node N3: BLUE3 vs RED2; u=0.011655; RED2 gains possession.
+  T7 begins the red counterattack; the former blue owner cannot kick during T6.
+The rule really evaluates u < 0.40. These two selected trials are not an unbiased
+success-rate estimate or evidence that either high-level policy is better.
+The fixture intentionally rejects seeds that do not produce the requested story;
+the standalone OneShotContest class supports arbitrary seeds and probabilities.
+
+4. VISUALISATION AND MODEL
+Ubuntu 20.04 / ROS Noetic / RViz. The course Figure 3 green/white pitch, dimensions,
+1 m border and fixed map frame are retained from Version 1. The nine-region overlay
+is separately switchable. All eight NAO6 RobotModels remain visible. ALL historical
+Path displays are disabled; path topics may still be recorded for analysis.
+The labels show ball ownership, support/defence roles, macro T, round, score,
+contest probability, random draw, and the turnover transition.
+
+Source: https://github.com/build-100/Glasgow-TDP26-NAO6
+Selected model: ros/nao6_description/urdf/nao6_collision_visual.urdf
+Eight derived URDFs only add unique link/joint prefixes and team colours.
+Each preserves 21 independent moving joints, 131 links, original inertia/contact
+geometry, joint limits and camera/IMU frames. The model is the repository's coarse
+collision-visual inspection variant, not a replacement wheeled robot.
+
+Root poses are kinematic; joint angles remain the inspection pose. WALK,
+HEAD_LOOK and KICK_FORWARD phase labels describe the shared execution contract,
+not a tested physical gait, vision system or kick controller. Gazebo local skill
+validation and real NAO6 work remain separate project workstreams. This demo does
+not claim to complete the course's autonomous behavioural or hardware requirements.
+
+5. TOPICS AND FRAMES
+/map                              static semantic field grid, frame map
+/field_markings                   static green/white pitch, frame map
+/planning_graph                   optional static nine-region overlay
+/loc_pose_red1 ... /loc_pose_blue4 ground-projected robot poses in map
+/path_red1 ... /path_blue4         recorded histories, hidden in RViz
+/joint_states_red1 ... /joint_states_blue4  static inspection joint angles
+/ball/pose                        ball pose in map
+/team_markers                     labels, ball, score and phase overlays
+/demo/state                       full scenario state at 20 Hz
+/demo/events                      state at phase transitions
+/demo/contests                    exactly two contest decisions
+/tf, /tf_static                   shared transport; unique robot frame names
+/clock                            playback time only
+
+Robot descriptions are parameters: /red1/robot_description ... /blue4/robot_description.
+TF frames are red1/base_link, red1/CameraTop, etc. All standard ROS pose/marker
+messages use map. Internal scenario/JSON coordinates are labelled field_center;
+add (4.5,3) to convert them to the repository's lower-left-origin map coordinates.
+
+6. FILES AND REPRODUCTION
+This is a separate ROS package, eng5325_global_demo_v2, on isolated master port 11433.
+It does not overwrite the Version 1 package, bag, configuration or video.
+
+scripts/fixed_policy_scenario.py  fixed actions, shared sequence, contest gate
+scripts/scenario.py               adapter import for the existing ROS interface
+scripts/global_demo.py            message/TF publication and display overlays
+scripts/field_map.py              fixed pitch/map and planning graph
+launch/live.launch               fixed pitch, eight state publishers, scenario
+launch/models.launch             eight namespaced NAO6 descriptions
+launch/replay.launch              parameters and RViz, no live state publishers
+rviz/nao6_global.rviz             eight models, pose arrows, no path display
+scripts/run_evidence.py           record -a, stop live nodes, play --clock, verify
+scripts/show_replay.py            replay an existing recording; --loop optional
+scripts/audit_runtime.py          checks model parameters and topic wiring
+scripts/verify_replay.py          compares all recorded/replayed streams and TF
+
+tests/test_scenario_v2.py checks the requested two-round story, all six players
+moving, fixed keepers, immediate-neighbour actions, stationary robots during
+ball rolling, bounded speed/spacing, one-shot gating, probability endpoints,
+continuous in-play states and correct T advancement on turnover.
+
+On your Ubuntu 20.04 / ROS Noetic desktop:
+  source /opt/ros/noetic/setup.bash
+  cd ~/Glasgow-TDP26-NAO6/demos/v2
+  chmod +x scripts/*.py
+  python3 scripts/run_evidence.py
+The complete live-and-replay check takes approximately five minutes. It creates
+its own master, refuses an occupied port, and stops only its own processes.
+
+Replay a verified run:
+  source /opt/ros/noetic/setup.bash
+  cd ~/Glasgow-TDP26-NAO6/demos/v2
+  python3 scripts/show_replay.py evidence/RUN_DIRECTORY/nao6_global.bag --loop
+Ctrl+C ends playback and its processes. Keep URDFs, ROS parameters and RViz config
+with the bag. A bag records messages, not a physics engine or all configuration.
+
+For manual recording, use the same environment in every terminal:
+  source /opt/ros/noetic/setup.bash
+  export ROS_PACKAGE_PATH=$HOME/Glasgow-TDP26-NAO6/demos:$ROS_PACKAGE_PATH
+  export ROS_MASTER_URI=http://127.0.0.1:11433
+  export ROS_HOSTNAME=127.0.0.1
+  unset ROS_IP
+  export DISABLE_ROS1_EOL_WARNINGS=1
+Then run roscore -p 11433, rosbag record -a -O /absolute/path/v2.bag, and
+roslaunch eng5325_global_demo_v2 live.launch in separate terminals.
+After the scenario ends, stop the recorder and live launch with Ctrl+C.
+Run roslaunch eng5325_global_demo_v2 replay.launch and then
+rosbag play --clock /absolute/path/v2.bag. Do not keep live publishers running.
+
+7. PUBLICATION
+Version 1 remains preserved separately. Original project material uses LICENSE.txt;
+model derivatives retain models/LICENSE.upstream and source provenance.
+
+8. VERIFIED TARGET RUN
+Verified on the authorised Ubuntu 20.04 / ROS Noetic computer on 2026-11-05.
+Final evidence directory: evidence/20261105_222716/
+Video: replay.mp4, 124.067 seconds, 1848 x 1052.
+Each of eight loc_pose streams contains 2350 recorded and 2350 identical replayed
+messages. Ball/state messages, two contest decisions and the three static map
+layers also match. Forty base/camera/IMU TF chains were verified during playback.
+The loaded model audit passed for all eight robots; zero Path displays enabled.
+The actual bag confirms both red goals, one turnover, all six field players
+moving in each round, stationary goalkeepers and T+1 after the turnover.
+
+Read verification.json, runtime_model_check.json and scenario_record_check.json
+in that evidence directory. scenario_plan.json contains the full phase plan.
+The local bag matches the target copy by SHA256:
+1a55a0cf51846adbff93f24c0b67ece74a3d2cf02abce2e75b2ae0146b37fa55
+
+The current second-edition replay uses port 11433; Version 1 used 11432.
