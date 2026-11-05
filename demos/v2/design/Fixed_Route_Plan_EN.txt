@@ -1,0 +1,43 @@
+VERSION 2: FIXED TEAM ACTIONS AND ONE-SHOT CONTESTS
+
+Both teams use fixed routes. Six field players move; both keepers are inactive.
+All high-level actions remain in the current region or move to one immediate neighbour.
+The local sequence and one nominal kick range are shared by both teams.
+
+T  Round  Ball owner  Ball outcome / contest
+1  1      RED1        straight kick: (-2.0, 0.0) -> (0.0, 0.0)
+    RED1 N3->N3 | RED2 N4->N4 | RED3 N4->N4
+    BLUE1 N4->N4 | BLUE2 N8->N8 | BLUE3 N2->N2
+2  1      RED2        straight kick: (0.0, 0.0) -> (2.0, 0.0); u=0.965242, retained
+    RED1 N3->N3 | RED2 N4->N4 | RED3 N4->N4
+    BLUE1 N4->N4 | BLUE2 N8->N8 | BLUE3 N2->N2
+3  1      RED3        straight kick: (2.0, 0.0) -> (4.0, 0.0)
+    RED1 N3->N4 | RED2 N4->N4 | RED3 N4->N5
+    BLUE1 N4->N4 | BLUE2 N8->N8 | BLUE3 N2->N2
+4  1      RED3        straight kick: (4.0, 0.0) -> (4.55, 0.0)
+    RED1 N4->N4 | RED2 N4->N4 | RED3 N5->N5
+    BLUE1 N4->N4 | BLUE2 N8->N8 | BLUE3 N2->N2
+5  2      BLUE1       straight kick: (0.0, 0.0) -> (-2.0, 0.0)
+    RED1 N0->N0 | RED2 N3->N3 | RED3 N7->N7
+    BLUE1 N4->N4 | BLUE2 N4->N7 | BLUE3 N4->N4
+6  2      BLUE3       NO KICK: turnover ends T; u=0.011655, turnover
+    RED1 N0->N0 | RED2 N3->N3 | RED3 N7->N7
+    BLUE1 N4->N4 | BLUE2 N7->N7 | BLUE3 N4->N3
+7  2      RED2        straight kick: (-2.0, 0.0) -> (0.0, 0.0)
+    RED1 N0->N4 | RED2 N3->N3 | RED3 N7->N7
+    BLUE1 N4->N4 | BLUE2 N7->N7 | BLUE3 N3->N4
+8  2      RED1        straight kick: (0.0, 0.0) -> (2.0, 0.0)
+    RED1 N4->N4 | RED2 N3->N4 | RED3 N7->N4
+    BLUE1 N4->N1 | BLUE2 N7->N8 | BLUE3 N4->N4
+9  2      RED3        straight kick: (2.0, 0.0) -> (4.0, 0.0)
+    RED1 N4->N4 | RED2 N4->N4 | RED3 N4->N5
+    BLUE1 N1->N2 | BLUE2 N8->N8 | BLUE3 N4->N1
+10 2      RED3        straight kick: (4.0, 0.0) -> (4.55, 0.0)
+    RED1 N4->N4 | RED2 N4->N4 | RED3 N5->N5
+    BLUE1 N2->N2 | BLUE2 N8->N8 | BLUE3 N1->N2
+
+Ball coordinates above are centre-relative; add (4.5,3) for ROS map.
+Round setup/restart is explicitly outside play and is not a pass.
+P=0.40, draw < P means turnover; at most one eligible contest per round.
+Seed 15 is selected for the requested two-round presentation, not a success-rate experiment.
+No policy training, physical gait, vision or contact dynamics is claimed.

@@ -1,0 +1,28 @@
+[
+  {
+    "round": 1,
+    "step": 2,
+    "node": 4,
+    "owner_before": "red2",
+    "defender": "blue1",
+    "owner_after": "red2",
+    "probability": 0.4,
+    "draw": 0.965242141552123,
+    "turnover": false,
+    "attempt": 1,
+    "locked": true
+  },
+  {
+    "round": 2,
+    "step": 6,
+    "node": 3,
+    "owner_before": "blue3",
+    "defender": "red2",
+    "owner_after": "red2",
+    "probability": 0.4,
+    "draw": 0.011654693792141124,
+    "turnover": true,
+    "attempt": 1,
+    "locked": true
+  }
+]
