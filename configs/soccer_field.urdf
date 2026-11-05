@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="soccer_field">
+  <link name="world"/>
+  <joint name="world_to_field" type="fixed">
+    <parent link="world"/>
+    <child link="soccer_field_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="soccer_field_link">
+    <visual>
+      <origin xyz="4.5 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="11 8 0.01"/>
+      </geometry>
+      <material name="grass_green">
+        <color rgba="0.13 0.55 0.13 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="4.5 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="11 8 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+</robot>

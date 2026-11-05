@@ -1,0 +1,18 @@
+<launch>
+  <arg name="no_gui" default="false"/>
+
+  <param name="robot_description"
+         textfile="$(find soccer_field)/urdf/soccer_field.urdf"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher"
+        name="robot_state_publisher" output="screen"/>
+
+  <node pkg="soccer_field" type="soccer_field_publisher.py"
+        name="soccer_field_publisher" output="screen"/>
+
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"
+        name="joint_state_publisher_gui" unless="$(arg no_gui)"/>
+
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"
+        args="-d $(find soccer_field)/rviz/soccer_field.rviz"/>
+</launch>
