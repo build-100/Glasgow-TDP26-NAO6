@@ -1,0 +1,15 @@
+{
+  "edition": "v2",
+  "verified_run": "20261105_222716",
+  "platform": "Ubuntu 20.04 / ROS Noetic",
+  "bag_sha256": "1a55a0cf51846adbff93f24c0b67ece74a3d2cf02abce2e75b2ae0146b37fa55",
+  "bag_bytes": 158867743,
+  "compression": "lossless gzip; decompress before rosbag play",
+  "source_runtime_evidence": "Recorded and verified on 2026-11-05 before repository packaging.",
+  "packaging_changes": [
+    "Repository-relative model-source discovery in prepare_package.py",
+    "LF line endings and Python shebangs",
+    "Portable README paths"
+  ],
+  "scope": "Kinematic RViz demonstration; not physical gait, vision or hardware validation."
+}

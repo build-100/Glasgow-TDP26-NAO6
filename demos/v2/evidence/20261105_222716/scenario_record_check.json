@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "state_messages": 2350,
+  "contest_decisions": [
+    {
+      "round": 1,
+      "step": 2,
+      "node": 4,
+      "owner_before": "red2",
+      "defender": "blue1",
+      "owner_after": "red2",
+      "probability": 0.4,
+      "draw": 0.965242141552123,
+      "turnover": false,
+      "attempt": 1,
+      "locked": true
+    },
+    {
+      "round": 2,
+      "step": 6,
+      "node": 3,
+      "owner_before": "blue3",
+      "defender": "red2",
+      "owner_after": "red2",
+      "probability": 0.4,
+      "draw": 0.011654693792141124,
+      "turnover": true,
+      "attempt": 1,
+      "locked": true
+    }
+  ],
+  "turnovers": 1,
+  "goals_by_round": [
+    1,
+    2
+  ],
+  "final_score": [
+    2,
+    0
+  ],
+  "distance_m_by_round": {
+    "1": {
+      "red1": 3.0513697134701867,
+      "red2": 2.4391234720437382,
+      "red3": 3.123886296557834,
+      "blue1": 1.18823014636055,
+      "blue2": 2.1890684873044726,
+      "blue3": 2.1890684873044726
+    },
+    "2": {
+      "red1": 5.065913784439059,
+      "red2": 3.763397221186185,
+      "red3": 5.407797963192215,
+      "blue1": 4.607665052910852,
+      "blue2": 5.980228985665221,
+      "blue3": 4.834309622273362
+    }
+  },
+  "keepers_static": true,
+  "all_hold_while_ball_rolls": true,
+  "turnover_ends_T_and_next_owner_starts_T_plus_1": true
+}
