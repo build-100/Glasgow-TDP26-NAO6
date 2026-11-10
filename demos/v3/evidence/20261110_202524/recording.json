@@ -1,0 +1,35 @@
+{
+  "edition": "v3",
+  "verified_run": "20261110_202524",
+  "bag_filename": "nao6_v3_first_to_three.bag",
+  "bag_sha256": "59cce8a0695425a501e328d2fcc03dd72f070092e5011fa9d152902fb84200a0",
+  "bag_bytes": 75551454,
+  "compressed_parts": [
+    {
+      "file": "nao6_v3_first_to_three.bag.gz.part01",
+      "bytes": 20971520,
+      "sha256": "617765911ad3e2a7e395c599a950e41d2ca0328f2ebea51c7cede97df8f7a56c"
+    },
+    {
+      "file": "nao6_v3_first_to_three.bag.gz.part02",
+      "bytes": 20971520,
+      "sha256": "1198eb62e7425f3fb7474521c42830ca172689feec42fdf7c56cc314d13575ab"
+    },
+    {
+      "file": "nao6_v3_first_to_three.bag.gz.part03",
+      "bytes": 433928,
+      "sha256": "034df782ae711b23ff9836bb987f588234d541d1dc6c94f7df96467a4e8df686"
+    }
+  ],
+  "compression": "lossless gzip, optionally split; restore with scripts/prepare_recording.py",
+  "video_sha256": "3eccaf525b9948be8940f28596dabfa2380aa8c689ba58e46796bd2e64ac2380",
+  "original_recorded_label": "V3",
+  "source_runtime_evidence": "Actual verified Ubuntu 20.04 / ROS Noetic run on 2026-11-10.",
+  "packaging_changes": [
+    "portable public geometry/skills imports",
+    "selected action-plan export without training/rewards/weights",
+    "LF executable scripts and portable documentation",
+    "lossless bag compression only"
+  ],
+  "scope": "Kinematic ROS demonstration; not physical gait or autonomous hardware validation."
+}

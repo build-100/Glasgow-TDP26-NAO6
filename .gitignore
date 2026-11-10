@@ -17,3 +17,17 @@ install/
 artifacts/
 Thumbs.db
 .DS_Store
+
+# Locally generated V3/V4 recording diagnostics are machine-specific.
+demos/v3/evidence/**/*.log
+demos/v4/evidence/**/*.log
+demos/v3/evidence/**/parameters.yaml
+demos/v4/evidence/**/parameters.yaml
+demos/v3/evidence/**/bag_info.txt
+demos/v4/evidence/**/bag_info.txt
+demos/v3/evidence/**/ready
+demos/v4/evidence/**/ready
+demos/v3/evidence/**/stop
+demos/v4/evidence/**/stop
+demos/v3/evidence/**/phase_seen_*
+demos/v4/evidence/**/phase_seen_*

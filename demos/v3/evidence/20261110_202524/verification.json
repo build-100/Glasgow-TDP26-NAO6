@@ -1,0 +1,160 @@
+{
+  "identical_recorded_and_replayed_messages": true,
+  "streams": {
+    "/loc_pose_red1": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_red2": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_red3": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_red4": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_blue1": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_blue2": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_blue3": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/loc_pose_blue4": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_red1": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_red2": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_red3": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_red4": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_blue1": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_blue2": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_blue3": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/joint_states_blue4": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/demo/state": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/demo/events": {
+      "recorded": 139,
+      "replayed": 139
+    },
+    "/demo/contests": {
+      "recorded": 3,
+      "replayed": 3
+    },
+    "/demo/skills": {
+      "recorded": 11,
+      "replayed": 11
+    },
+    "/policy/utilities": {
+      "recorded": 13,
+      "replayed": 13
+    },
+    "/ball/pose": {
+      "recorded": 3873,
+      "replayed": 3873
+    },
+    "/map": {
+      "recorded": 1,
+      "replayed": 1
+    },
+    "/field_markings": {
+      "recorded": 1,
+      "replayed": 1
+    },
+    "/planning_graph": {
+      "recorded": 1,
+      "replayed": 1
+    },
+    "/team_markers": {
+      "recorded": 969,
+      "replayed": 969
+    }
+  },
+  "expected_robot_tf_chains": 40,
+  "verified_robot_tf_chains": 40,
+  "tf_frames": [
+    "blue1/Accelerometer",
+    "blue1/CameraBottom",
+    "blue1/CameraTop",
+    "blue1/Gyrometer",
+    "blue1/base_link",
+    "blue2/Accelerometer",
+    "blue2/CameraBottom",
+    "blue2/CameraTop",
+    "blue2/Gyrometer",
+    "blue2/base_link",
+    "blue3/Accelerometer",
+    "blue3/CameraBottom",
+    "blue3/CameraTop",
+    "blue3/Gyrometer",
+    "blue3/base_link",
+    "blue4/Accelerometer",
+    "blue4/CameraBottom",
+    "blue4/CameraTop",
+    "blue4/Gyrometer",
+    "blue4/base_link",
+    "red1/Accelerometer",
+    "red1/CameraBottom",
+    "red1/CameraTop",
+    "red1/Gyrometer",
+    "red1/base_link",
+    "red2/Accelerometer",
+    "red2/CameraBottom",
+    "red2/CameraTop",
+    "red2/Gyrometer",
+    "red2/base_link",
+    "red3/Accelerometer",
+    "red3/CameraBottom",
+    "red3/CameraTop",
+    "red3/Gyrometer",
+    "red3/base_link",
+    "red4/Accelerometer",
+    "red4/CameraBottom",
+    "red4/CameraTop",
+    "red4/Gyrometer",
+    "red4/base_link"
+  ],
+  "live_pose_publishers_stopped_before_playback": true,
+  "match_rule": "first_to_three",
+  "final_score": [
+    3,
+    0
+  ],
+  "motion_backend": "kinematic; not validated humanoid dynamics"
+}

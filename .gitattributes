@@ -1,0 +1,12 @@
+demos/v3/scripts/*.py text eol=lf
+demos/v4/scripts/*.py text eol=lf
+demos/v3/tests/*.py text eol=lf
+demos/v4/tests/*.py text eol=lf
+demos/v3/models/** -text
+demos/v4/models/** -text
+demos/v3/urdf/** -text
+demos/v4/urdf/** -text
+demos/v3/evidence/**/*.part* binary
+demos/v4/evidence/**/*.part* binary
+demos/v3/evidence/**/*.mp4 binary
+demos/v4/evidence/**/*.mp4 binary

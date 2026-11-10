@@ -1,0 +1,69 @@
+POLICY-DERIVED ROUTES - V4
+No winner preference in showcase selection. Same or immediately neighbouring regions only.
+
+Round 1 | final round score [1, 0]
+red1: N4 -> N3 -> N4 -> N5 -> N5 -> N5
+red2: N0 -> N3 -> N0 -> N3 -> N1 -> N1
+red3: N6 -> N4 -> N4 -> N4 -> N5 -> N5
+blue1: N1 -> N3 -> N1 -> N5 -> N2 -> N2
+blue2: N4 -> N4 -> N5 -> N1 -> N1 -> N1
+blue3: N7 -> N7 -> N7 -> N7 -> N8 -> N8
+T1 {"type": "CONTEST", "step": 1, "owner_before": "blue2", "challenger": "red3", "owner_after": "red3", "draw": 0.278881403716997, "probability": 0.4, "turnover": true, "node": 4, "owner_ball_distance": 0.28, "challenger_ball_distance": 0.4882622246293484, "robot_distance": 0.6881860213634104}
+T3 {"type": "KICK", "robot": "red3", "team": 0, "start": [0.0, 0.0], "end": [2.0, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T3 {"type": "COMPLETED_PASS", "passer": "red3", "receiver": "red1"}
+T4 {"type": "KICK", "robot": "red1", "team": 0, "start": [2.0, 0.0], "end": [4.0, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T4 {"type": "COMPLETED_PASS", "passer": "red1", "receiver": "red3"}
+T5 {"type": "KICK", "robot": "red3", "team": 0, "start": [4.0, 0.0], "end": [4.5, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 0.5, "shot": true, "foot": "right", "strength": "single_nominal_setting"}
+T5 {"type": "GOAL", "team": 0}
+
+Round 2 | final round score [2, 0]
+red1: N4 -> N8 -> N5 -> N5 -> N8
+red2: N0 -> N3 -> N3 -> N4 -> N2
+red3: N6 -> N4 -> N4 -> N5 -> N5
+blue1: N1 -> N3 -> N1 -> N2 -> N2
+blue2: N7 -> N7 -> N7 -> N7 -> N7
+blue3: N4 -> N4 -> N5 -> N8 -> N8
+T1 {"type": "CONTEST", "step": 1, "owner_before": "blue3", "challenger": "red3", "owner_after": "red3", "draw": 0.2022310877868405, "probability": 0.4, "turnover": true, "node": 4, "owner_ball_distance": 0.28, "challenger_ball_distance": 0.4882622246293484, "robot_distance": 0.6881860213634104}
+T2 {"type": "KICK", "robot": "red3", "team": 0, "start": [0.0, 0.0], "end": [2.0, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T2 {"type": "COMPLETED_PASS", "passer": "red3", "receiver": "red1"}
+T3 {"type": "KICK", "robot": "red1", "team": 0, "start": [2.0, 0.0], "end": [4.0, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T3 {"type": "COMPLETED_PASS", "passer": "red1", "receiver": "red3"}
+T4 {"type": "KICK", "robot": "red3", "team": 0, "start": [4.0, 0.0], "end": [4.5, 0.0], "theta": 0.0, "nominal_range": 2.0, "travelled": 0.5, "shot": true, "foot": "right", "strength": "single_nominal_setting"}
+T4 {"type": "GOAL", "team": 0}
+
+Round 3 | final round score [2, 1]
+red1: N4 -> N3 -> N3 -> N3
+red2: N0 -> N3 -> N0 -> N0
+red3: N6 -> N4 -> N1 -> N2
+blue1: N1 -> N3 -> N3 -> N0
+blue2: N4 -> N4 -> N3 -> N3
+blue3: N7 -> N7 -> N6 -> N6
+T1 {"type": "CONTEST", "step": 1, "owner_before": "blue2", "challenger": "red3", "owner_after": "blue2", "draw": 0.915933691150569, "probability": 0.4, "turnover": false, "node": 4, "owner_ball_distance": 0.28, "challenger_ball_distance": 0.4882622246293484, "robot_distance": 0.6881860213634104}
+T1 {"type": "KICK", "robot": "blue2", "team": 1, "start": [0.0, 0.0], "end": [-2.0, 2.4492935982947064e-16], "theta": 3.141592653589793, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T1 {"type": "COMPLETED_PASS", "passer": "blue2", "receiver": "blue1"}
+T2 {"type": "KICK", "robot": "blue1", "team": 1, "start": [-2.0, 2.4492935982947064e-16], "end": [-4.0, 4.898587196589413e-16], "theta": 3.141592653589793, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T2 {"type": "COMPLETED_PASS", "passer": "blue1", "receiver": "blue2"}
+T3 {"type": "KICK", "robot": "blue2", "team": 1, "start": [-4.0, 4.898587196589413e-16], "end": [-4.5, 5.51091059616309e-16], "theta": 3.141592653589793, "nominal_range": 2.0, "travelled": 0.5, "shot": true, "foot": "right", "strength": "single_nominal_setting"}
+T3 {"type": "GOAL", "team": 1}
+
+Round 4 | final round score [3, 1]
+red1: N1 -> N4 -> N3 -> N3 -> N1 -> N1 -> N1 -> N5 -> N5 -> N5
+red2: N4 -> N4 -> N3 -> N0 -> N0 -> N1 -> N2 -> N2 -> N5 -> N1
+red3: N7 -> N6 -> N3 -> N0 -> N0 -> N1 -> N2 -> N2 -> N2 -> N4
+blue1: N4 -> N5 -> N7 -> N4 -> N4 -> N4 -> N4 -> N5 -> N5 -> N2
+blue2: N2 -> N4 -> N4 -> N1 -> N1 -> N2 -> N2 -> N2 -> N2 -> N5
+blue3: N8 -> N7 -> N3 -> N7 -> N3 -> N3 -> N3 -> N3 -> N3 -> N3
+T1 {"type": "CONTEST", "step": 1, "owner_before": "red2", "challenger": "blue2", "owner_after": "blue2", "draw": 0.11632914268548333, "probability": 0.4, "turnover": true, "node": 4, "owner_ball_distance": 0.28, "challenger_ball_distance": 0.4882622246293484, "robot_distance": 0.6881860213634104}
+T2 {"type": "KICK", "robot": "blue2", "team": 1, "start": [0.0, 0.0], "end": [-2.0, 2.4492935982947064e-16], "theta": 3.141592653589793, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T3 {"type": "KICK", "robot": "red1", "team": 0, "start": [-2.0, 2.4492935982947064e-16], "end": [-1.9999999999999998, -1.9999999999999998], "theta": -1.5707963267948966, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T3 {"type": "COMPLETED_PASS", "passer": "red1", "receiver": "red2"}
+T4 {"type": "KICK", "robot": "red2", "team": 0, "start": [-1.9999999999999998, -1.9999999999999998], "end": [2.220446049250313e-16, -1.9999999999999998], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T4 {"type": "COMPLETED_PASS", "passer": "red2", "receiver": "red1"}
+T6 {"type": "KICK", "robot": "red1", "team": 0, "start": [2.220446049250313e-16, -1.9999999999999998], "end": [2.0, -1.9999999999999998], "theta": 0.0, "nominal_range": 2.0, "travelled": 1.9999999999999998, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T6 {"type": "COMPLETED_PASS", "passer": "red1", "receiver": "red2"}
+T7 {"type": "KICK", "robot": "red2", "team": 0, "start": [2.0, -1.9999999999999998], "end": [4.0, -1.9999999999999998], "theta": 0.0, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T7 {"type": "COMPLETED_PASS", "passer": "red2", "receiver": "red3"}
+T8 {"type": "KICK", "robot": "red3", "team": 0, "start": [4.0, -1.9999999999999998], "end": [4.0, 2.220446049250313e-16], "theta": 1.5707963267948966, "nominal_range": 2.0, "travelled": 2.0, "shot": false, "foot": "right", "strength": "single_nominal_setting"}
+T8 {"type": "COMPLETED_PASS", "passer": "red3", "receiver": "red1"}
+T9 {"type": "KICK", "robot": "red1", "team": 0, "start": [4.0, 2.220446049250313e-16], "end": [4.5, 2.220446049250313e-16], "theta": 0.0, "nominal_range": 2.0, "travelled": 0.5, "shot": true, "foot": "right", "strength": "single_nominal_setting"}
+T9 {"type": "GOAL", "team": 0}

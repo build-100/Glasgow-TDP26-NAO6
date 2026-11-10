@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/build-100/Glasgow-TDP26-NAO6",
+  "source": "ros/nao6_description/urdf/nao6_collision_visual.urdf",
+  "sha256": "c568734d6e1311d80debef273272b250ed8b0ea43d9d014a6b4df237fc0eb0b7",
+  "changes": [
+    "Prefix every link, joint and mimic reference per robot",
+    "Red/blue visual colour only"
+  ],
+  "preserved": [
+    "inertia",
+    "collision geometry",
+    "joint types and limits",
+    "camera/IMU frames",
+    "hip coupling"
+  ],
+  "map_origin": "lower-left field corner, same as repository field.json",
+  "visual_frame": "map for all ROS messages and markers; internal scenario coordinates are centre-relative (+4.5,+3 offset)",
+  "motion": "V3 shared bounded kinematic skill executor with illustrative joint animation; not a validated gait"
+}

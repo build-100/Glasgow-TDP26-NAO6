@@ -1,0 +1,39 @@
+COMPUTED HIGH-LEVEL ROUTES - SELECTED FIRST-TO-THREE MATCH
+Each consecutive region is identical or an immediate neighbour.
+Coordinates are field-centred; ROS map coordinates add (4.5, 3.0).
+
+ROUND 1 | kickoff RED | score [1, 0]
+red1: N1 -> N4 -> N2 -> N2
+red2: N7 -> N5 -> N5 -> N2
+red3: N4 -> N4 -> N5 -> N5
+blue1: N4 -> N4 -> N5 -> N5
+blue2: N2 -> N4 -> N5 -> N5
+blue3: N8 -> N4 -> N5 -> N5
+T1 contest red3 / blue1: separation 0.560 m, u=0.524914, turnover=False
+T1 red3: kick [0.0, 0.0] -> [2.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T2 red2: kick [2.0, 0.0] -> [4.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T3 red3: kick [4.0, 0.0] -> [4.5, 0.0], travelled 0.500 m, nominal strength/range unchanged
+
+ROUND 2 | kickoff BLUE | score [2, 0]
+red1: N4 -> N4 -> N4 -> N2 -> N2
+red2: N0 -> N4 -> N5 -> N5 -> N2
+red3: N6 -> N7 -> N5 -> N5 -> N5
+blue1: N1 -> N1 -> N4 -> N5 -> N5
+blue2: N4 -> N4 -> N4 -> N5 -> N5
+blue3: N7 -> N7 -> N7 -> N5 -> N5
+T1 contest blue2 / red1: separation 0.560 m, u=0.189452, turnover=True
+T2 red1: kick [0.0, 0.0] -> [2.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T3 red2: kick [2.0, 0.0] -> [4.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T4 red3: kick [4.0, 0.0] -> [4.5, 0.0], travelled 0.500 m, nominal strength/range unchanged
+
+ROUND 3 | kickoff BLUE | score [3, 0]
+red1: N4 -> N4 -> N4 -> N0 -> N0
+red2: N0 -> N4 -> N5 -> N5 -> N2
+red3: N6 -> N4 -> N8 -> N5 -> N5
+blue1: N1 -> N1 -> N4 -> N5 -> N5
+blue2: N7 -> N7 -> N4 -> N5 -> N5
+blue3: N4 -> N4 -> N4 -> N5 -> N5
+T1 contest blue3 / red1: separation 0.560 m, u=0.289040, turnover=True
+T2 red1: kick [0.0, 0.0] -> [2.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T3 red2: kick [2.0, 0.0] -> [4.0, 0.0], travelled 2.000 m, nominal strength/range unchanged
+T4 red3: kick [4.0, 0.0] -> [4.5, 0.0], travelled 0.500 m, nominal strength/range unchanged

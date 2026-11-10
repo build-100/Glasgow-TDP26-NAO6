@@ -1,0 +1,19 @@
+{
+  "programs": [],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "width": 1848,
+      "height": 1052,
+      "avg_frame_rate": "15/1",
+      "duration": "199.933333",
+      "nb_frames": "2999"
+    }
+  ],
+  "format": {
+    "duration": "199.934000",
+    "size": "3211118"
+  },
+  "full_decode_passed": true,
+  "expected_scene_duration_seconds": 193.5987648183969
+}

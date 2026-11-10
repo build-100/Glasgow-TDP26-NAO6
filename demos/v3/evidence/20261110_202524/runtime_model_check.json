@@ -1,0 +1,80 @@
+{
+  "robots": {
+    "red1": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "red2": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "red3": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "red4": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "blue1": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "blue2": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "blue3": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    },
+    "blue4": {
+      "loaded_description_matches_generated_urdf": true,
+      "inertias_collisions_joint_geometry_and_limits_preserved": true,
+      "independent_moving_joints": 21,
+      "link_count": 131,
+      "state_publisher_subscribes_to_correct_joint_topic": true
+    }
+  },
+  "fixed_frame": "map",
+  "enabled_robot_model_displays": 8,
+  "enabled_path_displays": 0,
+  "map": {
+    "frame": "map",
+    "resolution": 0.05000000074505806,
+    "width": 220,
+    "height": 160,
+    "origin": [
+      -1.0,
+      -1.0
+    ]
+  },
+  "fixed_pitch_markers_in_map": true,
+  "green_rgb": [
+    0.0,
+    0.6000000238418579,
+    0.0
+  ],
+  "passed": true
+}

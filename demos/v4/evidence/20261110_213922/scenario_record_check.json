@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "states": 7096,
+  "contests": [
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "blue2",
+      "challenger": "red3",
+      "owner_after": "red3",
+      "draw": 0.278881403716997,
+      "probability": 0.4,
+      "turnover": true,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.4882622246293484,
+      "robot_distance": 0.6881860213634104,
+      "round": 1
+    },
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "blue3",
+      "challenger": "red3",
+      "owner_after": "red3",
+      "draw": 0.2022310877868405,
+      "probability": 0.4,
+      "turnover": true,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.4882622246293484,
+      "robot_distance": 0.6881860213634104,
+      "round": 2
+    },
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "blue2",
+      "challenger": "red3",
+      "owner_after": "blue2",
+      "draw": 0.915933691150569,
+      "probability": 0.4,
+      "turnover": false,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.4882622246293484,
+      "robot_distance": 0.6881860213634104,
+      "round": 3
+    },
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "red2",
+      "challenger": "blue2",
+      "owner_after": "blue2",
+      "draw": 0.11632914268548333,
+      "probability": 0.4,
+      "turnover": true,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.4882622246293484,
+      "robot_distance": 0.6881860213634104,
+      "round": 4
+    }
+  ],
+  "final_score": [
+    3,
+    1
+  ],
+  "goals_to_win": 3,
+  "goalkeepers_fixed_and_inactive": true,
+  "all_field_players_have_joint_animation": true,
+  "ball_rolling_players_hold": true,
+  "one_contest_per_goal_round": true,
+  "turnover_ends_T": true,
+  "skill_completion_messages": 21,
+  "motion": "kinematic skill execution, not dynamics validation",
+  "field_player_in_play_distance_m": {
+    "red1": 30.28064573717455,
+    "red2": 38.868834200448056,
+    "red3": 45.5889403690088,
+    "blue1": 41.71188235325218,
+    "blue2": 22.313270126672176,
+    "blue3": 25.012104220860902
+  },
+  "baseline_decision_messages": 21,
+  "baseline_allocations_match_executed_region_actions": true,
+  "all_three_blue_same_region_fraction_at_completion": 0.0,
+  "mean_blue_pair_distance_at_completion": 3.2150601741538107
+}
