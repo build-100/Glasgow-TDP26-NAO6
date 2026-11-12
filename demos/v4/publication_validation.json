@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "edition": 4,
+  "scenario_phases": 250,
+  "sampled_states": 1250,
+  "phase_timeline_identical_to_verified_local_source": true,
+  "sampled_poses_ball_scores_events_and_skills_identical": true,
+  "restored_bag_sha256_matches_original": true,
+  "video_unchanged": true,
+  "public_integration_tests": 2,
+  "private_research_training_and_weights_excluded": true,
+  "source_plan_sha256": "3189e333f1cae8647c9195ec1b18088f6c83bc256c03caf2045d484f8aa6fa16",
+  "published_plan_sha256": "e8cbf9c0ca97d809b4b32642fb9ba2ba77612c8af6812cff4f2bd8a938f4a60b",
+  "validation_boundary": "Packaging equivalence checks; original ROS/runtime reports are stored separately with the recording."
+}

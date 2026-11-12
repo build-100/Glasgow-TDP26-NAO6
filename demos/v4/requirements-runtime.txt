@@ -1,0 +1,3 @@
+# The authorized ROS Noetic computer already provides NumPy 1.19.5.
+# Torch is not required for exported-policy inference or the ROS demo.
+numpy>=1.19

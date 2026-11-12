@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "states": 3873,
+  "contests": [
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "red3",
+      "challenger": "blue1",
+      "owner_after": "red3",
+      "draw": 0.5249142006973999,
+      "probability": 0.4,
+      "turnover": false,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.28,
+      "robot_distance": 0.56,
+      "round": 1
+    },
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "blue2",
+      "challenger": "red1",
+      "owner_after": "red1",
+      "draw": 0.18945246861995935,
+      "probability": 0.4,
+      "turnover": true,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.28,
+      "robot_distance": 0.56,
+      "round": 2
+    },
+    {
+      "type": "CONTEST",
+      "step": 1,
+      "owner_before": "blue3",
+      "challenger": "red1",
+      "owner_after": "red1",
+      "draw": 0.2890396477125543,
+      "probability": 0.4,
+      "turnover": true,
+      "node": 4,
+      "owner_ball_distance": 0.28,
+      "challenger_ball_distance": 0.28,
+      "robot_distance": 0.56,
+      "round": 3
+    }
+  ],
+  "final_score": [
+    3,
+    0
+  ],
+  "goals_to_win": 3,
+  "goalkeepers_fixed_and_inactive": true,
+  "all_field_players_have_joint_animation": true,
+  "ball_rolling_players_hold": true,
+  "one_contest_per_goal_round": true,
+  "turnover_ends_T": true,
+  "skill_completion_messages": 11,
+  "motion": "kinematic skill execution, not dynamics validation",
+  "field_player_in_play_distance_m": {
+    "red1": 15.285855261479515,
+    "red2": 22.091069622561836,
+    "red3": 21.486198396349195,
+    "blue1": 17.820666481584308,
+    "blue2": 18.368743469853865,
+    "blue3": 16.99682554726628
+  }
+}

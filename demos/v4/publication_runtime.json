@@ -1,0 +1,32 @@
+{
+  "edition": 4,
+  "passed": true,
+  "platform": "Ubuntu 20.04 / ROS Noetic / NumPy 1.19.5",
+  "public_source_space_live_start_passed": true,
+  "public_replay_start_passed": true,
+  "robot_count": 8,
+  "unit_tests": 2,
+  "port_released_after_each": true,
+  "observed_states": {
+    "live": {
+      "version": 4,
+      "robots": 8,
+      "score": [
+        0,
+        0
+      ],
+      "phase": "HEAD_LOOK_SETTLED_BALL"
+    },
+    "replay": {
+      "version": 3,
+      "robots": 8,
+      "score": [
+        0,
+        0
+      ],
+      "phase": "ROUND_SETUP_NOT_IN_PLAY"
+    }
+  },
+  "original_recording_used": "Identical SHA256 to the public losslessly restored bag.",
+  "scope": "Short startup/integration checks; original complete-match recording checks are separate."
+}

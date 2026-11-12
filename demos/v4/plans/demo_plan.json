@@ -1,0 +1,7099 @@
+{
+  "version": 4,
+  "kind": "fixed_policy_derived_match_export",
+  "match_rule": "First team to three goals wins; inactive goalkeepers.",
+  "selection": "Complete match nearest median completed length in seeds 920000..920023; tie by seed. No preference for winner or contest outcome. All candidate statuses disclosed.",
+  "rules": {
+    "kick_range": 2.0,
+    "walk_speed": 0.3,
+    "skill_timeout": 20.0,
+    "contest_probability": 0.4,
+    "contest_ball_radius": 0.5,
+    "contest_robot_distance": 0.9,
+    "acquire_radius": 0.5,
+    "pass_support_radius": 1.2,
+    "goal_half_width": 1.3,
+    "goals_to_win": 3
+  },
+  "episodes": [
+    {
+      "round": 1,
+      "score_after": [
+        1,
+        0
+      ],
+      "initial": {
+        "seed": 92921110,
+        "red_direction": 1,
+        "robots": [
+          [
+            -0.9,
+            0.0
+          ],
+          [
+            -2.7,
+            -1.7
+          ],
+          [
+            -2.7,
+            1.7
+          ],
+          [
+            0.8,
+            -1.7
+          ],
+          [
+            0.28,
+            0.0
+          ],
+          [
+            0.8,
+            1.7
+          ]
+        ],
+        "ball": [
+          0.0,
+          0.0
+        ],
+        "owner": 4,
+        "possession_team": 1
+      },
+      "transitions": [
+        {
+          "step": 1,
+          "actions": [
+            3,
+            3,
+            4,
+            3,
+            4,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.3800000000000003
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0827865949251736
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 6,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                -0.4
+              ],
+              "actual": [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.2041223447303007
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 3,
+              "target": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0398026251715753
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28,
+                0.0
+              ],
+              "actual": [
+                0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.2799999999999997,
+                1.66
+              ],
+              "actual": [
+                0.2799999999999997,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.5215361924162122
+            }
+          ],
+          "events": [
+            {
+              "type": "CONTEST",
+              "step": 1,
+              "owner_before": "blue2",
+              "challenger": "red3",
+              "owner_after": "red3",
+              "draw": 0.278881403716997,
+              "probability": 0.4,
+              "turnover": true,
+              "node": 4,
+              "owner_ball_distance": 0.28,
+              "challenger_ball_distance": 0.4882622246293484,
+              "robot_distance": 0.6881860213634104
+            },
+            {
+              "type": "TURNOVER_ENDS_T",
+              "next_step": 2
+            }
+          ],
+          "before": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.9,
+                0.0
+              ],
+              [
+                -2.7,
+                -1.7
+              ],
+              [
+                -2.7,
+                1.7
+              ],
+              [
+                0.8,
+                -1.7
+              ],
+              [
+                0.28,
+                0.0
+              ],
+              [
+                0.8,
+                1.7
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.28,
+                0.0
+              ],
+              [
+                0.2799999999999997,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.026186414062976837,
+              -0.03885822743177414,
+              -0.16041947901248932
+            ],
+            "all_utilities": [
+              [
+                -0.203202024102211,
+                -0.0648823082447052,
+                -0.19585639238357544,
+                0.026186414062976837,
+                -0.05452785640954971,
+                -0.11899963766336441,
+                -0.1871597021818161,
+                -0.14903540909290314,
+                -0.15671031177043915
+              ],
+              [
+                -0.09187240153551102,
+                -0.062155209481716156,
+                -0.1166253611445427,
+                -0.03885822743177414,
+                -0.04724579304456711,
+                -0.04771512374281883,
+                -0.08635091036558151,
+                -0.07349145412445068,
+                -0.07330220192670822
+              ],
+              [
+                -0.2763751447200775,
+                -0.34639468789100647,
+                -0.32195132970809937,
+                -0.2718808650970459,
+                -0.16041947901248932,
+                -0.19201694428920746,
+                -0.2750405967235565,
+                -0.2421322911977768,
+                -0.20226368308067322
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 3,
+                "target": [
+                  -1.72,
+                  2.4492935982947064e-16
+                ],
+                "marginal_gain": 0.7940283381527845
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  0.2799999999999997,
+                  1.66
+                ],
+                "marginal_gain": 0.0648712855936433
+              },
+              {
+                "robot": "blue2",
+                "node": 4,
+                "target": [
+                  0.28,
+                  0.0
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 0.8588996237464278,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -1.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                -1.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                -3.216245299353273e-16,
+                -2.0
+              ],
+              [
+                -3.216245299353273e-16,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.9538686588821021
+          }
+        },
+        {
+          "step": 2,
+          "actions": [
+            4,
+            0,
+            4,
+            1,
+            5,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 4,
+              "target": [
+                0.0,
+                0.0
+              ],
+              "actual": [
+                0.0,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.2800000000000002
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 0,
+              "target": [
+                -3.0,
+                -1.66
+              ],
+              "actual": [
+                -3.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.1256528408938276
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                0.0
+              ],
+              "actual": [
+                -0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.40000000000000013
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 1,
+              "target": [
+                0.28000000000000014,
+                -2.0
+              ],
+              "actual": [
+                0.28,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.8284271247461903
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                2.2800000000000002,
+                0.34
+              ],
+              "actual": [
+                2.2800000000000002,
+                0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.02869416127715
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.28000000000000014,
+                1.66
+              ],
+              "actual": [
+                0.28000000000000014,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.440892098500626e-16
+            }
+          ],
+          "events": [
+            {
+              "type": "HOLD_NO_REACHABLE_PASS",
+              "robot": "red3"
+            }
+          ],
+          "before": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.28,
+                0.0
+              ],
+              [
+                0.2799999999999997,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -3.0,
+                -1.66
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                0.28,
+                -1.9999999999999998
+              ],
+              [
+                2.2800000000000002,
+                0.34
+              ],
+              [
+                0.28000000000000014,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.25353625416755676,
+              0.22950415313243866,
+              0.05563903599977493
+            ],
+            "all_utilities": [
+              [
+                0.07103460282087326,
+                0.06247958540916443,
+                0.13562829792499542,
+                0.16619576513767242,
+                0.25353625416755676,
+                0.3032556176185608,
+                0.10569551587104797,
+                0.06510021537542343,
+                0.1606433391571045
+              ],
+              [
+                0.22950415313243866,
+                0.14816533029079437,
+                0.0966113731265068,
+                0.19957031309604645,
+                0.15482358634471893,
+                0.16883030533790588,
+                0.1937658190727234,
+                0.0998120829463005,
+                0.06847897917032242
+              ],
+              [
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563903599977493,
+                0.05563906580209732
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue2",
+                "node": 5,
+                "target": [
+                  2.2800000000000002,
+                  0.34
+                ],
+                "marginal_gain": 0.6286612632668844
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  0.28000000000000014,
+                  1.66
+                ],
+                "marginal_gain": 0.11805486844524471
+              },
+              {
+                "robot": "blue1",
+                "node": 1,
+                "target": [
+                  0.28000000000000014,
+                  -2.0
+                ],
+                "marginal_gain": 0.10107709168317286
+              }
+            ],
+            "objective": 0.847793223395302,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.2246467991473532e-16,
+                -2.0
+              ],
+              [
+                1.2246467991473532e-16,
+                2.0
+              ],
+              [
+                1.4142135623730951,
+                -1.4142135623730951
+              ],
+              [
+                1.4142135623730951,
+                1.4142135623730951
+              ],
+              [
+                2.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 0.9773164576892578
+          }
+        },
+        {
+          "step": 3,
+          "actions": [
+            5,
+            3,
+            4,
+            5,
+            1,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                1.72,
+                0.0
+              ],
+              "actual": [
+                1.72,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.72
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.1256528408938276
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                0.0
+              ],
+              "actual": [
+                -0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 5,
+              "target": [
+                2.2800000000000002,
+                0.0
+              ],
+              "actual": [
+                2.2800000000000002,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.82842712474619
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 1,
+              "target": [
+                0.28000000000000014,
+                -1.66
+              ],
+              "actual": [
+                0.28000000000000025,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.8284271247461903
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.28000000000000014,
+                1.66
+              ],
+              "actual": [
+                0.28000000000000014,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red3",
+              "start": [
+                -0.28,
+                0.0
+              ],
+              "end": [
+                -0.28,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red3",
+              "team": 0,
+              "start": [
+                0.0,
+                0.0
+              ],
+              "end": [
+                2.0,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red3",
+              "receiver": "red1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red1",
+              "distance": 0.28
+            }
+          ],
+          "before": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -3.0,
+                -1.66
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                0.28,
+                -1.9999999999999998
+              ],
+              [
+                2.2800000000000002,
+                0.34
+              ],
+              [
+                0.28000000000000014,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                2.2800000000000002,
+                0.0
+              ],
+              [
+                0.28000000000000025,
+                -1.66
+              ],
+              [
+                0.28000000000000014,
+                1.66
+              ]
+            ],
+            "ball": [
+              2.0,
+              0.0
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.33303698897361755,
+              0.21571458876132965,
+              0.05861111730337143
+            ],
+            "all_utilities": [
+              [
+                0.027895085513591766,
+                0.04140955209732056,
+                0.17609596252441406,
+                0.10909506678581238,
+                0.15680529177188873,
+                0.33303698897361755,
+                0.10580416023731232,
+                0.039013005793094635,
+                0.20380686223506927
+              ],
+              [
+                0.19568343460559845,
+                0.19280852377414703,
+                0.17741143703460693,
+                0.21571458876132965,
+                0.19038628041744232,
+                0.24909885227680206,
+                0.1973579376935959,
+                0.1475003957748413,
+                0.13784858584403992
+              ],
+              [
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861111730337143,
+                0.05861114710569382
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 5,
+                "target": [
+                  2.2800000000000002,
+                  0.0
+                ],
+                "marginal_gain": 0.7489548520909661
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  0.28000000000000014,
+                  1.66
+                ],
+                "marginal_gain": 0.15218809904736702
+              },
+              {
+                "robot": "blue2",
+                "node": 1,
+                "target": [
+                  0.28000000000000014,
+                  -1.66
+                ],
+                "marginal_gain": 0.07676337572080194
+              }
+            ],
+            "objective": 0.977906326859135,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.2246467991473532e-16,
+                -2.0
+              ],
+              [
+                1.2246467991473532e-16,
+                2.0
+              ],
+              [
+                1.4142135623730951,
+                -1.4142135623730951
+              ],
+              [
+                1.4142135623730951,
+                1.4142135623730951
+              ],
+              [
+                2.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 1.1287557735122653
+          }
+        },
+        {
+          "step": 4,
+          "actions": [
+            5,
+            1,
+            5,
+            2,
+            1,
+            8
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                1.72,
+                0.0
+              ],
+              "actual": [
+                1.72,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0328864139627782
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                -0.34
+              ],
+              "actual": [
+                3.7199999999999998,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.0144239935512545
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 2,
+              "target": [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              "actual": [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.28000000000000025
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 8,
+              "target": [
+                3.694213562373095,
+                1.08
+              ],
+              "actual": [
+                3.694213562373095,
+                1.08
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.4631278130459435
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red1",
+              "start": [
+                1.72,
+                0.0
+              ],
+              "end": [
+                1.72,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red1",
+              "team": 0,
+              "start": [
+                2.0,
+                0.0
+              ],
+              "end": [
+                4.0,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red1",
+              "receiver": "red3"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red3",
+              "distance": 0.440454310910905
+            }
+          ],
+          "before": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                2.2800000000000002,
+                0.0
+              ],
+              [
+                0.28000000000000025,
+                -1.66
+              ],
+              [
+                0.28000000000000014,
+                1.66
+              ]
+            ],
+            "ball": [
+              2.0,
+              0.0
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                3.7199999999999998,
+                -0.34
+              ],
+              [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                3.694213562373095,
+                1.08
+              ]
+            ],
+            "ball": [
+              4.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.29767921566963196,
+              0.22790859639644623,
+              0.25049537420272827
+            ],
+            "all_utilities": [
+              [
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196,
+                0.29767921566963196
+              ],
+              [
+                0.1944124400615692,
+                0.22790859639644623,
+                0.3119230568408966,
+                0.18713118135929108,
+                0.2177109271287918,
+                0.33353695273399353,
+                0.15208633244037628,
+                0.15963225066661835,
+                0.23604987561702728
+              ],
+              [
+                0.114399753510952,
+                0.09764884412288666,
+                0.1630149930715561,
+                0.131260946393013,
+                0.1367015391588211,
+                0.25049537420272827,
+                0.10433805733919144,
+                0.10580459237098694,
+                0.20096471905708313
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 2,
+                "target": [
+                  3.694213562373095,
+                  -1.4142135623730951
+                ],
+                "marginal_gain": 0.6057046125118352
+              },
+              {
+                "robot": "blue3",
+                "node": 8,
+                "target": [
+                  3.694213562373095,
+                  1.08
+                ],
+                "marginal_gain": 0.39128022702098114
+              },
+              {
+                "robot": "blue2",
+                "node": 1,
+                "target": [
+                  0.0,
+                  -1.66
+                ],
+                "marginal_gain": -0.0074666666666666735
+              }
+            ],
+            "objective": 0.9895181728661496,
+            "covered_tasks": [
+              [
+                2.0,
+                0.0
+              ],
+              [
+                2.0,
+                -2.0
+              ],
+              [
+                2.0,
+                2.0
+              ],
+              [
+                3.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                3.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                4.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 1.1426682478807082
+          }
+        },
+        {
+          "step": 5,
+          "actions": [
+            5,
+            1,
+            5,
+            2,
+            1,
+            8
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                1.72,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                1.72,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.4492935982947064e-16
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                0.0
+              ],
+              "actual": [
+                3.7199999999999998,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.34,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                4.28,
+                -2.0
+              ],
+              "actual": [
+                4.28,
+                -2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461902
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 8,
+              "to_node": 8,
+              "target": [
+                4.28,
+                1.66
+              ],
+              "actual": [
+                4.28,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8243456498991305
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red3",
+              "start": [
+                3.7199999999999998,
+                0.0
+              ],
+              "end": [
+                3.7199999999999998,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red3",
+              "team": 0,
+              "start": [
+                4.0,
+                0.0
+              ],
+              "end": [
+                4.5,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 0.5,
+              "shot": true,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "GOAL",
+              "team": 0
+            }
+          ],
+          "before": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                3.7199999999999998,
+                -0.34
+              ],
+              [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                3.694213562373095,
+                1.08
+              ]
+            ],
+            "ball": [
+              4.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92921110,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                2.4492935982947064e-16
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                3.7199999999999998,
+                0.0
+              ],
+              [
+                4.28,
+                -2.0
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                4.28,
+                1.66
+              ]
+            ],
+            "ball": [
+              4.5,
+              0.0
+            ],
+            "owner": null,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.2746659219264984,
+              0.25809094309806824,
+              0.21855776011943817
+            ],
+            "all_utilities": [
+              [
+                0.22438965737819672,
+                0.2469741553068161,
+                0.27228623628616333,
+                0.22788594663143158,
+                0.271643728017807,
+                0.2746659219264984,
+                0.2282135784626007,
+                0.24056226015090942,
+                0.23368172347545624
+              ],
+              [
+                0.20546434819698334,
+                0.25809094309806824,
+                0.2537282109260559,
+                0.20806777477264404,
+                0.2565423250198364,
+                0.24658851325511932,
+                0.18762987852096558,
+                0.20772360265254974,
+                0.18658147752285004
+              ],
+              [
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855776011943817,
+                0.21855781972408295
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 2,
+                "target": [
+                  4.28,
+                  -2.0
+                ],
+                "marginal_gain": 0.27135470053944316
+              },
+              {
+                "robot": "blue3",
+                "node": 8,
+                "target": [
+                  4.28,
+                  1.66
+                ],
+                "marginal_gain": 0.20559578046470695
+              },
+              {
+                "robot": "blue2",
+                "node": 1,
+                "target": [
+                  0.0,
+                  -1.66
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 0.4769504810041501,
+            "covered_tasks": [
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                -2.0
+              ],
+              [
+                4.0,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.5210244216613586
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "score_after": [
+        2,
+        0
+      ],
+      "initial": {
+        "seed": 92922119,
+        "red_direction": 1,
+        "robots": [
+          [
+            -0.9,
+            0.0
+          ],
+          [
+            -2.7,
+            -1.7
+          ],
+          [
+            -2.7,
+            1.7
+          ],
+          [
+            0.8,
+            -1.7
+          ],
+          [
+            0.8,
+            1.7
+          ],
+          [
+            0.28,
+            0.0
+          ]
+        ],
+        "ball": [
+          0.0,
+          0.0
+        ],
+        "owner": 5,
+        "possession_team": 1
+      },
+      "transitions": [
+        {
+          "step": 1,
+          "actions": [
+            8,
+            3,
+            4,
+            3,
+            7,
+            4
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 8,
+              "target": [
+                3.0,
+                2.0
+              ],
+              "actual": [
+                3.0,
+                2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.382921400162226
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0827865949251736
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 6,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                -0.4
+              ],
+              "actual": [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.2041223447303007
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 3,
+              "target": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0398026251715753
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.2799999999999997,
+                2.34
+              ],
+              "actual": [
+                0.2799999999999997,
+                2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8246211251235323
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28,
+                0.0
+              ],
+              "actual": [
+                0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "CONTEST",
+              "step": 1,
+              "owner_before": "blue3",
+              "challenger": "red3",
+              "owner_after": "red3",
+              "draw": 0.2022310877868405,
+              "probability": 0.4,
+              "turnover": true,
+              "node": 4,
+              "owner_ball_distance": 0.28,
+              "challenger_ball_distance": 0.4882622246293484,
+              "robot_distance": 0.6881860213634104
+            },
+            {
+              "type": "TURNOVER_ENDS_T",
+              "next_step": 2
+            }
+          ],
+          "before": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.9,
+                0.0
+              ],
+              [
+                -2.7,
+                -1.7
+              ],
+              [
+                -2.7,
+                1.7
+              ],
+              [
+                0.8,
+                -1.7
+              ],
+              [
+                0.8,
+                1.7
+              ],
+              [
+                0.28,
+                0.0
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 5,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.0,
+                2.0
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.2799999999999997,
+                2.34
+              ],
+              [
+                0.28,
+                0.0
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.03583160787820816,
+              0.004828832112252712,
+              -0.12765802443027496
+            ],
+            "all_utilities": [
+              [
+                -0.2851996421813965,
+                -0.08823256939649582,
+                -0.08715895563364029,
+                0.02133692055940628,
+                -0.076291523873806,
+                0.032476622611284256,
+                -0.2523806393146515,
+                -0.2237357199192047,
+                0.03583160787820816
+              ],
+              [
+                -0.09352806955575943,
+                -0.05487756431102753,
+                -0.05367026478052139,
+                0.004828832112252712,
+                -0.03748026490211487,
+                -0.04167993366718292,
+                -0.070621058344841,
+                -0.13042695820331573,
+                -0.03479836508631706
+              ],
+              [
+                -0.28339898586273193,
+                -0.24232496321201324,
+                -0.2414112538099289,
+                -0.1501217931509018,
+                -0.12765802443027496,
+                -0.13344788551330566,
+                -0.22990776598453522,
+                -0.2528875768184662,
+                -0.1882413774728775
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 3,
+                "target": [
+                  -1.72,
+                  2.4492935982947064e-16
+                ],
+                "marginal_gain": 0.7940283381527845
+              },
+              {
+                "robot": "blue2",
+                "node": 7,
+                "target": [
+                  0.2799999999999997,
+                  2.34
+                ],
+                "marginal_gain": 0.05678902072144812
+              },
+              {
+                "robot": "blue3",
+                "node": 4,
+                "target": [
+                  0.28,
+                  0.0
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 0.8508173588742326,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -1.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                -1.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                -3.216245299353273e-16,
+                -2.0
+              ],
+              [
+                -3.216245299353273e-16,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.9538686588821021
+          }
+        },
+        {
+          "step": 2,
+          "actions": [
+            5,
+            3,
+            4,
+            1,
+            7,
+            5
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 8,
+              "to_node": 5,
+              "target": [
+                1.72,
+                0.0
+              ],
+              "actual": [
+                1.72,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.374531532744933
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.6653345369377348e-16
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                0.0
+              ],
+              "actual": [
+                -0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.40000000000000013,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 1,
+              "target": [
+                0.28000000000000014,
+                -2.0
+              ],
+              "actual": [
+                0.28,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.8284271247461903
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.28000000000000014,
+                2.34
+              ],
+              "actual": [
+                0.28000000000000014,
+                2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.440892098500626e-16
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                2.2800000000000002,
+                -0.34
+              ],
+              "actual": [
+                2.2800000000000002,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.02869416127715
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red3",
+              "start": [
+                -0.28,
+                0.0
+              ],
+              "end": [
+                -0.28,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red3",
+              "team": 0,
+              "start": [
+                0.0,
+                0.0
+              ],
+              "end": [
+                2.0,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red3",
+              "receiver": "red1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red1",
+              "distance": 0.28
+            }
+          ],
+          "before": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.0,
+                2.0
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.2799999999999997,
+                2.34
+              ],
+              [
+                0.28,
+                0.0
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                0.28,
+                -1.9999999999999998
+              ],
+              [
+                0.28000000000000014,
+                2.34
+              ],
+              [
+                2.2800000000000002,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.0,
+              0.0
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.3857114017009735,
+              0.18306778371334076,
+              0.08958988636732101
+            ],
+            "all_utilities": [
+              [
+                -0.002711021341383457,
+                0.01994066685438156,
+                0.18906717002391815,
+                0.12323541194200516,
+                0.27012112736701965,
+                0.3857114017009735,
+                0.010798280127346516,
+                0.04758891463279724,
+                0.14663727581501007
+              ],
+              [
+                0.15368202328681946,
+                0.17795519530773163,
+                0.11499606817960739,
+                0.18306778371334076,
+                0.1662301868200302,
+                0.2056555300951004,
+                0.1645604968070984,
+                0.05517484247684479,
+                0.14093632996082306
+              ],
+              [
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958988636732101,
+                0.08958989381790161
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue3",
+                "node": 5,
+                "target": [
+                  2.2800000000000002,
+                  -0.34
+                ],
+                "marginal_gain": 0.6286612632668844
+              },
+              {
+                "robot": "blue2",
+                "node": 7,
+                "target": [
+                  0.28000000000000014,
+                  2.34
+                ],
+                "marginal_gain": 0.12539371657755743
+              },
+              {
+                "robot": "blue1",
+                "node": 1,
+                "target": [
+                  0.28000000000000014,
+                  -2.0
+                ],
+                "marginal_gain": 0.043419529442943
+              }
+            ],
+            "objective": 0.7974745092873848,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.2246467991473532e-16,
+                -2.0
+              ],
+              [
+                1.2246467991473532e-16,
+                2.0
+              ],
+              [
+                1.4142135623730951,
+                -1.4142135623730951
+              ],
+              [
+                1.4142135623730951,
+                1.4142135623730951
+              ],
+              [
+                2.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 0.9269977435813407
+          }
+        },
+        {
+          "step": 3,
+          "actions": [
+            5,
+            4,
+            5,
+            2,
+            7,
+            8
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                1.72,
+                0.0
+              ],
+              "actual": [
+                1.72,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                0.34000000000000025
+              ],
+              "actual": [
+                -0.28000000000000025,
+                0.34000000000000025
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                -0.34
+              ],
+              "actual": [
+                3.7199999999999998,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.0144239935512545
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 2,
+              "target": [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              "actual": [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.4641016151377544
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.0,
+                2.34
+              ],
+              "actual": [
+                0.0,
+                2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.28000000000000014
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 8,
+              "target": [
+                3.694213562373095,
+                1.08
+              ],
+              "actual": [
+                3.694213562373095,
+                1.08
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0040958060931118
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red1",
+              "start": [
+                1.72,
+                0.0
+              ],
+              "end": [
+                1.72,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red1",
+              "team": 0,
+              "start": [
+                2.0,
+                0.0
+              ],
+              "end": [
+                4.0,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red1",
+              "receiver": "red3"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red3",
+              "distance": 0.440454310910905
+            }
+          ],
+          "before": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                0.28,
+                -1.9999999999999998
+              ],
+              [
+                0.28000000000000014,
+                2.34
+              ],
+              [
+                2.2800000000000002,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.0,
+              0.0
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -0.28000000000000025,
+                0.34000000000000025
+              ],
+              [
+                3.7199999999999998,
+                -0.34
+              ],
+              [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              [
+                0.0,
+                2.34
+              ],
+              [
+                3.694213562373095,
+                1.08
+              ]
+            ],
+            "ball": [
+              4.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.3121873438358307,
+              0.2067079097032547,
+              0.23657859861850739
+            ],
+            "all_utilities": [
+              [
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873438358307,
+                0.3121873140335083
+              ],
+              [
+                0.11926872283220291,
+                0.1939363032579422,
+                0.28376737236976624,
+                0.13051334023475647,
+                0.2067079097032547,
+                0.30439385771751404,
+                0.13797302544116974,
+                0.17734681069850922,
+                0.20940442383289337
+              ],
+              [
+                0.03322087973356247,
+                0.07230855524539948,
+                0.16407029330730438,
+                0.056824468076229095,
+                0.07854665070772171,
+                0.23657859861850739,
+                0.06921451538801193,
+                0.0804898589849472,
+                0.17318759858608246
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue3",
+                "node": 8,
+                "target": [
+                  3.694213562373095,
+                  1.08
+                ],
+                "marginal_gain": 0.5740121273612233
+              },
+              {
+                "robot": "blue1",
+                "node": 2,
+                "target": [
+                  3.694213562373095,
+                  -1.4142135623730951
+                ],
+                "marginal_gain": 0.4228375226199951
+              },
+              {
+                "robot": "blue2",
+                "node": 7,
+                "target": [
+                  0.0,
+                  2.34
+                ],
+                "marginal_gain": -0.00746666666666667
+              }
+            ],
+            "objective": 0.9893829833145518,
+            "covered_tasks": [
+              [
+                2.0,
+                0.0
+              ],
+              [
+                2.0,
+                -2.0
+              ],
+              [
+                2.0,
+                2.0
+              ],
+              [
+                3.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                3.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                4.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 1.1426682478807082
+          }
+        },
+        {
+          "step": 4,
+          "actions": [
+            8,
+            2,
+            5,
+            2,
+            7,
+            8
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 8,
+              "target": [
+                3.7199999999999998,
+                2.0
+              ],
+              "actual": [
+                3.7199999999999998,
+                2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.82842712474619
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 2,
+              "target": [
+                3.7199999999999998,
+                -1.66
+              ],
+              "actual": [
+                3.7199999999999998,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.47213595499958
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                0.0
+              ],
+              "actual": [
+                3.7199999999999998,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.34,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                4.28,
+                -2.0
+              ],
+              "actual": [
+                4.28,
+                -2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461902
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.0,
+                2.34
+              ],
+              "actual": [
+                0.0,
+                2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 8,
+              "to_node": 8,
+              "target": [
+                4.28,
+                1.66
+              ],
+              "actual": [
+                4.28,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8243456498991305
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red3",
+              "start": [
+                3.7199999999999998,
+                0.0
+              ],
+              "end": [
+                3.7199999999999998,
+                0.0
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red3",
+              "team": 0,
+              "start": [
+                4.0,
+                0.0
+              ],
+              "end": [
+                4.5,
+                0.0
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 0.5,
+              "shot": true,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "GOAL",
+              "team": 0
+            }
+          ],
+          "before": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                1.72,
+                0.0
+              ],
+              [
+                -0.28000000000000025,
+                0.34000000000000025
+              ],
+              [
+                3.7199999999999998,
+                -0.34
+              ],
+              [
+                3.694213562373095,
+                -1.4142135623730951
+              ],
+              [
+                0.0,
+                2.34
+              ],
+              [
+                3.694213562373095,
+                1.08
+              ]
+            ],
+            "ball": [
+              4.0,
+              0.0
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92922119,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.7199999999999998,
+                2.0
+              ],
+              [
+                3.7199999999999998,
+                -1.6599999999999997
+              ],
+              [
+                3.7199999999999998,
+                0.0
+              ],
+              [
+                4.28,
+                -2.0
+              ],
+              [
+                0.0,
+                2.34
+              ],
+              [
+                4.28,
+                1.66
+              ]
+            ],
+            "ball": [
+              4.5,
+              0.0
+            ],
+            "owner": null,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.3180285394191742,
+              0.2745859622955322,
+              0.21572263538837433
+            ],
+            "all_utilities": [
+              [
+                0.25398263335227966,
+                0.23459389805793762,
+                0.30949991941452026,
+                0.23364746570587158,
+                0.27210256457328796,
+                0.2780754566192627,
+                0.21995460987091064,
+                0.25829818844795227,
+                0.3180285394191742
+              ],
+              [
+                0.20192834734916687,
+                0.23241935670375824,
+                0.2745859622955322,
+                0.18146467208862305,
+                0.21865983307361603,
+                0.23229221999645233,
+                0.14842292666435242,
+                0.17106854915618896,
+                0.15186914801597595
+              ],
+              [
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572263538837433,
+                0.21572257578372955
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 2,
+                "target": [
+                  4.28,
+                  -2.0
+                ],
+                "marginal_gain": 0.27135470053944316
+              },
+              {
+                "robot": "blue3",
+                "node": 8,
+                "target": [
+                  4.28,
+                  1.66
+                ],
+                "marginal_gain": 0.20559578046470695
+              },
+              {
+                "robot": "blue2",
+                "node": 7,
+                "target": [
+                  0.0,
+                  2.34
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 0.4769504810041501,
+            "covered_tasks": [
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                -2.0
+              ],
+              [
+                4.0,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.5210244216613586
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "score_after": [
+        2,
+        1
+      ],
+      "initial": {
+        "seed": 92923128,
+        "red_direction": 1,
+        "robots": [
+          [
+            -0.9,
+            0.0
+          ],
+          [
+            -2.7,
+            -1.7
+          ],
+          [
+            -2.7,
+            1.7
+          ],
+          [
+            0.8,
+            -1.7
+          ],
+          [
+            0.28,
+            0.0
+          ],
+          [
+            0.8,
+            1.7
+          ]
+        ],
+        "ball": [
+          0.0,
+          0.0
+        ],
+        "owner": 4,
+        "possession_team": 1
+      },
+      "transitions": [
+        {
+          "step": 1,
+          "actions": [
+            3,
+            3,
+            4,
+            3,
+            4,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.3800000000000003
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0827865949251736
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 6,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                -0.4
+              ],
+              "actual": [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.2041223447303007
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 3,
+              "target": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0398026251715753
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28,
+                0.0
+              ],
+              "actual": [
+                0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 3.4290110376125894e-17
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 7,
+              "to_node": 7,
+              "target": [
+                0.2799999999999997,
+                1.66
+              ],
+              "actual": [
+                0.2799999999999997,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.5215361924162122
+            }
+          ],
+          "events": [
+            {
+              "type": "CONTEST",
+              "step": 1,
+              "owner_before": "blue2",
+              "challenger": "red3",
+              "owner_after": "blue2",
+              "draw": 0.915933691150569,
+              "probability": 0.4,
+              "turnover": false,
+              "node": 4,
+              "owner_ball_distance": 0.28,
+              "challenger_ball_distance": 0.4882622246293484,
+              "robot_distance": 0.6881860213634104
+            },
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "blue2",
+              "start": [
+                0.28,
+                0.0
+              ],
+              "end": [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              "theta": 3.141592653589793
+            },
+            {
+              "type": "KICK",
+              "robot": "blue2",
+              "team": 1,
+              "start": [
+                0.0,
+                0.0
+              ],
+              "end": [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              "theta": 3.141592653589793,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "blue2",
+              "receiver": "blue1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "blue1",
+              "distance": 0.28
+            }
+          ],
+          "before": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.9,
+                0.0
+              ],
+              [
+                -2.7,
+                -1.7
+              ],
+              [
+                -2.7,
+                1.7
+              ],
+              [
+                0.8,
+                -1.7
+              ],
+              [
+                0.28,
+                0.0
+              ],
+              [
+                0.8,
+                1.7
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              [
+                0.2799999999999997,
+                1.66
+              ]
+            ],
+            "ball": [
+              -2.0,
+              2.4492935982947064e-16
+            ],
+            "owner": 3,
+            "possession_team": 1
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.026186414062976837,
+              -0.03885822743177414,
+              -0.16041947901248932
+            ],
+            "all_utilities": [
+              [
+                -0.203202024102211,
+                -0.0648823082447052,
+                -0.19585639238357544,
+                0.026186414062976837,
+                -0.05452785640954971,
+                -0.11899963766336441,
+                -0.1871597021818161,
+                -0.14903540909290314,
+                -0.15671031177043915
+              ],
+              [
+                -0.09187240153551102,
+                -0.062155209481716156,
+                -0.1166253611445427,
+                -0.03885822743177414,
+                -0.04724579304456711,
+                -0.04771512374281883,
+                -0.08635091036558151,
+                -0.07349145412445068,
+                -0.07330220192670822
+              ],
+              [
+                -0.2763751447200775,
+                -0.34639468789100647,
+                -0.32195132970809937,
+                -0.2718808650970459,
+                -0.16041947901248932,
+                -0.19201694428920746,
+                -0.2750405967235565,
+                -0.2421322911977768,
+                -0.20226368308067322
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 3,
+                "target": [
+                  -1.72,
+                  2.4492935982947064e-16
+                ],
+                "marginal_gain": 0.7940283381527845
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  0.2799999999999997,
+                  1.66
+                ],
+                "marginal_gain": 0.0648712855936433
+              },
+              {
+                "robot": "blue2",
+                "node": 4,
+                "target": [
+                  0.28,
+                  0.0
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 0.8588996237464278,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -1.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                -1.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                -3.216245299353273e-16,
+                -2.0
+              ],
+              [
+                -3.216245299353273e-16,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.9538686588821021
+          }
+        },
+        {
+          "step": 2,
+          "actions": [
+            3,
+            0,
+            1,
+            3,
+            3,
+            6
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 0,
+              "target": [
+                -3.694213562373095,
+                -1.0799999999999998
+              ],
+              "actual": [
+                -3.694213562373095,
+                -1.0799999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0040958060931118
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -2.34
+              ],
+              "actual": [
+                0.0,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.9601020381602585
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.2884754904439333e-17,
+              "alignment_distance": 3.429011037612589e-17
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 3,
+              "target": [
+                -3.7199999999999998,
+                0.3400000000000005
+              ],
+              "actual": [
+                -3.7199999999999998,
+                0.3400000000000005
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.0144239935512545
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 6,
+              "target": [
+                -3.1342135623730947,
+                1.08
+              ],
+              "actual": [
+                -3.1342135623730947,
+                1.08
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.463127813045943
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "blue1",
+              "start": [
+                -1.72,
+                2.4492935982947064e-16
+              ],
+              "end": [
+                -1.72,
+                2.1063924945334475e-16
+              ],
+              "theta": 3.141592653589793
+            },
+            {
+              "type": "KICK",
+              "robot": "blue1",
+              "team": 1,
+              "start": [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              "end": [
+                -4.0,
+                4.898587196589413e-16
+              ],
+              "theta": 3.141592653589793,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "blue1",
+              "receiver": "blue2"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "blue2",
+              "distance": 0.440454310910905
+            }
+          ],
+          "before": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.3400000000000001
+              ],
+              [
+                -0.28000000000000025,
+                -0.40000000000000013
+              ],
+              [
+                -1.72,
+                2.220446049250313e-16
+              ],
+              [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              [
+                0.2799999999999997,
+                1.66
+              ]
+            ],
+            "ball": [
+              -2.0,
+              2.4492935982947064e-16
+            ],
+            "owner": 3,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -3.694213562373095,
+                -1.0799999999999998
+              ],
+              [
+                0.0,
+                -2.34
+              ],
+              [
+                -1.72,
+                2.1063924945334475e-16
+              ],
+              [
+                -3.7199999999999998,
+                0.3400000000000005
+              ],
+              [
+                -3.1342135623730947,
+                1.08
+              ]
+            ],
+            "ball": [
+              -4.0,
+              4.898587196589413e-16
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              -0.14072203636169434,
+              -0.19698481261730194,
+              -0.37070217728614807
+            ],
+            "all_utilities": [
+              [
+                -0.1897917240858078,
+                -0.2795471251010895,
+                -0.3018397390842438,
+                -0.14072203636169434,
+                -0.24282796680927277,
+                -0.2951931655406952,
+                -0.1606985628604889,
+                -0.19235573709011078,
+                -0.3582955598831177
+              ],
+              [
+                -0.19698481261730194,
+                -0.22356291115283966,
+                -0.2709132730960846,
+                -0.23256297409534454,
+                -0.27107951045036316,
+                -0.2801242470741272,
+                -0.2473171502351761,
+                -0.2868401110172272,
+                -0.2990703582763672
+              ],
+              [
+                -0.42360734939575195,
+                -0.37070217728614807,
+                -0.39115267992019653,
+                -0.4138588607311249,
+                -0.4166620671749115,
+                -0.4107092618942261,
+                -0.4108235538005829,
+                -0.43120095133781433,
+                -0.39866575598716736
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue2",
+                "node": 3,
+                "target": [
+                  -3.7199999999999998,
+                  0.3400000000000005
+                ],
+                "marginal_gain": 0.6387221510488543
+              },
+              {
+                "robot": "blue3",
+                "node": 6,
+                "target": [
+                  -3.1342135623730947,
+                  1.08
+                ],
+                "marginal_gain": 0.18747924063156052
+              },
+              {
+                "robot": "blue1",
+                "node": 3,
+                "target": [
+                  -1.72,
+                  2.4492935982947064e-16
+                ],
+                "marginal_gain": -6.102601307850489e-19
+              }
+            ],
+            "objective": 0.8262013916804148,
+            "covered_tasks": [
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -4.0,
+                0.0
+              ],
+              [
+                -3.414213562373095,
+                -1.414213562373095
+              ],
+              [
+                -3.414213562373095,
+                1.4142135623730954
+              ],
+              [
+                -2.0000000000000004,
+                -1.9999999999999998
+              ],
+              [
+                -2.0000000000000004,
+                2.0000000000000004
+              ]
+            ],
+            "weighted_coverage": 1.0256027731896733
+          }
+        },
+        {
+          "step": 3,
+          "actions": [
+            3,
+            0,
+            2,
+            0,
+            3,
+            6
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -4.28,
+                4.898587196589413e-16
+              ],
+              "actual": [
+                -4.28,
+                4.898587196589413e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 0,
+              "to_node": 0,
+              "target": [
+                -4.28,
+                -1.6599999999999995
+              ],
+              "actual": [
+                -4.28,
+                -1.6599999999999995
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8243456498991303
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 2,
+              "target": [
+                3.0,
+                -2.34
+              ],
+              "actual": [
+                3.0,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 0,
+              "target": [
+                -3.7199999999999998,
+                -1.9999999999999996
+              ],
+              "actual": [
+                -3.7199999999999998,
+                -1.9999999999999996
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.82842712474619
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.7199999999999998,
+                4.898587196589413e-16
+              ],
+              "actual": [
+                -3.7199999999999998,
+                4.996003610813204e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.34,
+              "alignment_distance": 4.403175179850507e-17
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 6,
+              "to_node": 6,
+              "target": [
+                -3.7199999999999998,
+                1.6600000000000004
+              ],
+              "actual": [
+                -3.7199999999999998,
+                1.6600000000000004
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8243456498991308
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "blue2",
+              "start": [
+                -3.7199999999999998,
+                4.996003610813204e-16
+              ],
+              "end": [
+                -3.7199999999999998,
+                4.555686092828154e-16
+              ],
+              "theta": 3.141592653589793
+            },
+            {
+              "type": "KICK",
+              "robot": "blue2",
+              "team": 1,
+              "start": [
+                -4.0,
+                4.898587196589413e-16
+              ],
+              "end": [
+                -4.5,
+                5.51091059616309e-16
+              ],
+              "theta": 3.141592653589793,
+              "nominal_range": 2.0,
+              "travelled": 0.5,
+              "shot": true,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "GOAL",
+              "team": 1
+            }
+          ],
+          "before": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -3.694213562373095,
+                -1.0799999999999998
+              ],
+              [
+                0.0,
+                -2.34
+              ],
+              [
+                -1.72,
+                2.1063924945334475e-16
+              ],
+              [
+                -3.7199999999999998,
+                0.3400000000000005
+              ],
+              [
+                -3.1342135623730947,
+                1.08
+              ]
+            ],
+            "ball": [
+              -4.0,
+              4.898587196589413e-16
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92923128,
+            "red_direction": 1,
+            "robots": [
+              [
+                -4.28,
+                4.898587196589413e-16
+              ],
+              [
+                -4.28,
+                -1.6599999999999995
+              ],
+              [
+                3.0,
+                -2.34
+              ],
+              [
+                -3.7199999999999998,
+                -1.9999999999999996
+              ],
+              [
+                -3.7199999999999998,
+                4.555686092828154e-16
+              ],
+              [
+                -3.7199999999999998,
+                1.6600000000000004
+              ]
+            ],
+            "ball": [
+              -4.5,
+              5.51091059616309e-16
+            ],
+            "owner": null,
+            "possession_team": 1
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              -0.2456371933221817,
+              -0.255807489156723,
+              -0.31915560364723206
+            ],
+            "all_utilities": [
+              [
+                -0.3156069815158844,
+                -0.28610268235206604,
+                -0.37002629041671753,
+                -0.2456371933221817,
+                -0.2729293406009674,
+                -0.3823855221271515,
+                -0.41769179701805115,
+                -0.29122820496559143,
+                -0.48456963896751404
+              ],
+              [
+                -0.255807489156723,
+                -0.281922847032547,
+                -0.32293078303337097,
+                -0.3446465730667114,
+                -0.3095126450061798,
+                -0.39858993887901306,
+                -0.24871931970119476,
+                -0.2835293412208557,
+                -0.43905073404312134
+              ],
+              [
+                -0.47632190585136414,
+                -0.34658846259117126,
+                -0.31915560364723206,
+                -0.4992343485355377,
+                -0.3931679427623749,
+                -0.34377506375312805,
+                -0.4458547532558441,
+                -0.3202440142631531,
+                -0.37582647800445557
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 0,
+                "target": [
+                  -3.7199999999999998,
+                  -1.9999999999999996
+                ],
+                "marginal_gain": 0.21802136720610982
+              },
+              {
+                "robot": "blue3",
+                "node": 6,
+                "target": [
+                  -3.7199999999999998,
+                  1.6600000000000004
+                ],
+                "marginal_gain": 0.20559578046470695
+              },
+              {
+                "robot": "blue2",
+                "node": 3,
+                "target": [
+                  -3.7199999999999998,
+                  4.898587196589413e-16
+                ],
+                "marginal_gain": -0.009066666666666667
+              }
+            ],
+            "objective": 0.4145504810041501,
+            "covered_tasks": [
+              [
+                -4.0,
+                4.898587196589413e-16
+              ],
+              [
+                -4.0,
+                -1.9999999999999996
+              ],
+              [
+                -4.0,
+                2.0000000000000004
+              ]
+            ],
+            "weighted_coverage": 0.5210244216613586
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "score_after": [
+        3,
+        1
+      ],
+      "initial": {
+        "seed": 92924137,
+        "red_direction": 1,
+        "robots": [
+          [
+            -0.8,
+            -1.7
+          ],
+          [
+            -0.28,
+            0.0
+          ],
+          [
+            -0.8,
+            1.7
+          ],
+          [
+            0.9,
+            0.0
+          ],
+          [
+            2.7,
+            -1.7
+          ],
+          [
+            2.7,
+            1.7
+          ]
+        ],
+        "ball": [
+          0.0,
+          0.0
+        ],
+        "owner": 1,
+        "possession_team": 0
+      },
+      "transitions": [
+        {
+          "step": 1,
+          "actions": [
+            4,
+            4,
+            6,
+            5,
+            4,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 4,
+              "target": [
+                0.0,
+                0.0
+              ],
+              "actual": [
+                0.0,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.8788294228055935
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                -0.28,
+                0.0
+              ],
+              "actual": [
+                -0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 6,
+              "target": [
+                -3.0,
+                1.66
+              ],
+              "actual": [
+                -3.0,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.200363606316011
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                2.2800000000000002,
+                0.0
+              ],
+              "actual": [
+                2.2800000000000002,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.3800000000000003
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 2,
+              "to_node": 4,
+              "target": [
+                0.28,
+                0.4
+              ],
+              "actual": [
+                0.28000000000000025,
+                0.40000000000000013
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.2041223447303007
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 8,
+              "to_node": 7,
+              "target": [
+                0.28000000000000014,
+                1.66
+              ],
+              "actual": [
+                0.28000000000000025,
+                1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.4203305559365234
+            }
+          ],
+          "events": [
+            {
+              "type": "CONTEST",
+              "step": 1,
+              "owner_before": "red2",
+              "challenger": "blue2",
+              "owner_after": "blue2",
+              "draw": 0.11632914268548333,
+              "probability": 0.4,
+              "turnover": true,
+              "node": 4,
+              "owner_ball_distance": 0.28,
+              "challenger_ball_distance": 0.4882622246293484,
+              "robot_distance": 0.6881860213634104
+            },
+            {
+              "type": "TURNOVER_ENDS_T",
+              "next_step": 2
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.8,
+                -1.7
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                -0.8,
+                1.7
+              ],
+              [
+                0.9,
+                0.0
+              ],
+              [
+                2.7,
+                -1.7
+              ],
+              [
+                2.7,
+                1.7
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 1,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                -3.0,
+                1.66
+              ],
+              [
+                2.2800000000000002,
+                0.0
+              ],
+              [
+                0.28000000000000025,
+                0.40000000000000013
+              ],
+              [
+                0.28000000000000025,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.1998724788427353,
+              0.1697397083044052,
+              0.17117467522621155
+            ],
+            "all_utilities": [
+              [
+                -0.03503739833831787,
+                -0.11778413504362106,
+                -0.0017978036776185036,
+                0.1506243497133255,
+                0.1998724788427353,
+                0.18544502556324005,
+                0.14104898273944855,
+                0.06775948405265808,
+                0.18474212288856506
+              ],
+              [
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397083044052,
+                0.1697397381067276
+              ],
+              [
+                0.14825980365276337,
+                0.0332864448428154,
+                -0.0423513762652874,
+                0.15281780064105988,
+                0.06531178206205368,
+                0.028525657951831818,
+                0.17117467522621155,
+                -0.06906644254922867,
+                -0.018804222345352173
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 5,
+                "target": [
+                  2.2800000000000002,
+                  0.0
+                ],
+                "marginal_gain": 0.8055591676084328
+              },
+              {
+                "robot": "blue2",
+                "node": 4,
+                "target": [
+                  0.28,
+                  0.4
+                ],
+                "marginal_gain": 0.20841502092097475
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  0.28000000000000014,
+                  1.66
+                ],
+                "marginal_gain": 0.0612868204221446
+              }
+            ],
+            "objective": 1.0752610089515522,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.2246467991473532e-16,
+                -2.0
+              ],
+              [
+                1.2246467991473532e-16,
+                2.0
+              ],
+              [
+                1.4142135623730951,
+                -1.4142135623730951
+              ],
+              [
+                1.4142135623730951,
+                1.4142135623730951
+              ],
+              [
+                2.0,
+                0.0
+              ]
+            ],
+            "weighted_coverage": 1.262046419636001
+          }
+        },
+        {
+          "step": 2,
+          "actions": [
+            3,
+            3,
+            3,
+            7,
+            4,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.2800000000000002
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "actual": [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0286941612771505
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 6,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                -0.3399999999999998
+              ],
+              "actual": [
+                -2.2800000000000002,
+                -0.33999999999999986
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.1256528408938276
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 7,
+              "target": [
+                0.2799999999999997,
+                2.0
+              ],
+              "actual": [
+                0.2799999999999998,
+                2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.8284271247461903
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28,
+                0.0
+              ],
+              "actual": [
+                0.28,
+                0.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.40000000000000013,
+              "alignment_distance": 3.4290110376125894e-17
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 3,
+              "target": [
+                -1.72,
+                -0.3399999999999998
+              ],
+              "actual": [
+                -1.7199999999999998,
+                -0.33999999999999986
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.82842712474619
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "blue2",
+              "start": [
+                0.28,
+                0.0
+              ],
+              "end": [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              "theta": 3.141592653589793
+            },
+            {
+              "type": "KICK",
+              "robot": "blue2",
+              "team": 1,
+              "start": [
+                0.0,
+                0.0
+              ],
+              "end": [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              "theta": 3.141592653589793,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "FREE_BALL_RECOVERY",
+              "robot": "red1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red1",
+              "distance": 0.28000000000000025
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.28,
+                0.0
+              ],
+              [
+                -3.0,
+                1.66
+              ],
+              [
+                2.2800000000000002,
+                0.0
+              ],
+              [
+                0.28000000000000025,
+                0.40000000000000013
+              ],
+              [
+                0.28000000000000025,
+                1.66
+              ]
+            ],
+            "ball": [
+              0.0,
+              0.0
+            ],
+            "owner": 4,
+            "possession_team": 1
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              [
+                -2.2800000000000002,
+                -0.33999999999999986
+              ],
+              [
+                0.2799999999999998,
+                2.0
+              ],
+              [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              [
+                -1.7199999999999998,
+                -0.33999999999999986
+              ]
+            ],
+            "ball": [
+              -2.0,
+              2.4492935982947064e-16
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.37960803508758545,
+              0.01155297365039587,
+              -0.06226421147584915
+            ],
+            "all_utilities": [
+              [
+                -0.14033569395542145,
+                -0.11756964772939682,
+                -0.0716942623257637,
+                0.37960803508758545,
+                -0.13338340818881989,
+                -0.12665866315364838,
+                -0.08454711735248566,
+                -0.143438920378685,
+                -0.18342356383800507
+              ],
+              [
+                -0.03908319026231766,
+                -0.013632372952997684,
+                -0.027747701853513718,
+                0.01155297365039587,
+                -0.05935368686914444,
+                -0.04458385705947876,
+                -0.09355460852384567,
+                -0.08223856985569,
+                -0.10037723928689957
+              ],
+              [
+                -0.19146722555160522,
+                -0.20029418170452118,
+                -0.1961795538663864,
+                -0.06226421147584915,
+                -0.09805764257907867,
+                -0.17178307473659515,
+                -0.1793084293603897,
+                -0.1822206825017929,
+                -0.20216652750968933
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -1.72,
+                  -0.3399999999999998
+                ],
+                "marginal_gain": 0.6703487342169896
+              },
+              {
+                "robot": "blue1",
+                "node": 7,
+                "target": [
+                  0.2799999999999997,
+                  2.0
+                ],
+                "marginal_gain": 0.02712114436655093
+              },
+              {
+                "robot": "blue2",
+                "node": 4,
+                "target": [
+                  0.28,
+                  0.0
+                ],
+                "marginal_gain": -0.010666666666666672
+              }
+            ],
+            "objective": 0.6868032119168738,
+            "covered_tasks": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -1.414213562373095,
+                -1.4142135623730951
+              ],
+              [
+                -1.414213562373095,
+                1.4142135623730951
+              ],
+              [
+                -3.216245299353273e-16,
+                -2.0
+              ],
+              [
+                -3.216245299353273e-16,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.8483193252366706
+          }
+        },
+        {
+          "step": 3,
+          "actions": [
+            3,
+            0,
+            0,
+            4,
+            1,
+            7
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "actual": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.3959797974644668
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 0,
+              "target": [
+                -2.28,
+                -1.6599999999999997
+              ],
+              "actual": [
+                -2.28,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 0,
+              "target": [
+                -2.28,
+                -2.34
+              ],
+              "actual": [
+                -2.28,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 4,
+              "target": [
+                0.28,
+                1.695664798819412e-16
+              ],
+              "actual": [
+                0.28,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.9999999999999998
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 1,
+              "target": [
+                -0.30578643762690483,
+                -1.0799999999999998
+              ],
+              "actual": [
+                -0.30578643762690483,
+                -1.0799999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.2286357273446102
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 7,
+              "target": [
+                -0.30578643762690483,
+                1.08
+              ],
+              "actual": [
+                -0.30578643762690483,
+                1.08
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0040958060931118
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red1",
+              "start": [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              "end": [
+                -2.0,
+                0.28000000000000025
+              ],
+              "theta": -1.5707963267948966
+            },
+            {
+              "type": "KICK",
+              "robot": "red1",
+              "team": 0,
+              "start": [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              "end": [
+                -1.9999999999999998,
+                -1.9999999999999998
+              ],
+              "theta": -1.5707963267948966,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red1",
+              "receiver": "red2"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red2",
+              "distance": 0.44045431091090487
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.2800000000000002,
+                2.4492935982947064e-16
+              ],
+              [
+                -2.2800000000000002,
+                0.34000000000000025
+              ],
+              [
+                -2.2800000000000002,
+                -0.33999999999999986
+              ],
+              [
+                0.2799999999999998,
+                2.0
+              ],
+              [
+                0.28,
+                -3.4290110376125894e-17
+              ],
+              [
+                -1.7199999999999998,
+                -0.33999999999999986
+              ]
+            ],
+            "ball": [
+              -2.0,
+              2.4492935982947064e-16
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.0,
+                0.28000000000000025
+              ],
+              [
+                -2.28,
+                -1.6599999999999997
+              ],
+              [
+                -2.28,
+                -2.34
+              ],
+              [
+                0.28,
+                2.220446049250313e-16
+              ],
+              [
+                -0.30578643762690483,
+                -1.0799999999999998
+              ],
+              [
+                -0.30578643762690483,
+                1.08
+              ]
+            ],
+            "ball": [
+              -1.9999999999999998,
+              -1.9999999999999998
+            ],
+            "owner": 1,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.06391043215990067,
+              0.11132151633501053,
+              0.0014056405052542686
+            ],
+            "all_utilities": [
+              [
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391043215990067,
+                0.06391044706106186
+              ],
+              [
+                0.11132151633501053,
+                0.04005869850516319,
+                -0.012085442431271076,
+                0.029044922441244125,
+                0.019320670515298843,
+                -0.007221763022243977,
+                -0.03183906897902489,
+                -0.06040206551551819,
+                -0.06542545557022095
+              ],
+              [
+                0.0014056405052542686,
+                -0.0412774458527565,
+                -0.02326633781194687,
+                -0.057196564972400665,
+                -0.06828539818525314,
+                0.002525865100324154,
+                -0.0872538611292839,
+                -0.1025940328836441,
+                -0.034721121191978455
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 4,
+                "target": [
+                  0.28,
+                  1.695664798819412e-16
+                ],
+                "marginal_gain": 0.7710462420841977
+              },
+              {
+                "robot": "blue2",
+                "node": 1,
+                "target": [
+                  -0.30578643762690483,
+                  -1.0799999999999998
+                ],
+                "marginal_gain": 0.3224199433476223
+              },
+              {
+                "robot": "blue3",
+                "node": 7,
+                "target": [
+                  -0.30578643762690483,
+                  1.08
+                ],
+                "marginal_gain": 0.3017410079143288
+              }
+            ],
+            "objective": 1.3952071933461487,
+            "covered_tasks": [
+              [
+                -2.0,
+                2.4492935982947064e-16
+              ],
+              [
+                -1.9999999999999998,
+                -1.9999999999999998
+              ],
+              [
+                -1.9999999999999998,
+                2.0000000000000004
+              ],
+              [
+                -0.5857864376269049,
+                -1.414213562373095
+              ],
+              [
+                -0.5857864376269049,
+                1.4142135623730954
+              ],
+              [
+                0.0,
+                1.695664798819412e-16
+              ]
+            ],
+            "weighted_coverage": 1.5347467009044882
+          }
+        },
+        {
+          "step": 4,
+          "actions": [
+            1,
+            0,
+            0,
+            4,
+            1,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 3,
+              "to_node": 1,
+              "target": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "actual": [
+                -0.2799999999999998,
+                -2.0
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.856011204459815
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 0,
+              "to_node": 0,
+              "target": [
+                -2.28,
+                -1.9999999999999998
+              ],
+              "actual": [
+                -2.28,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.3400000000000001,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 0,
+              "to_node": 0,
+              "target": [
+                -4.28,
+                -2.3399999999999994
+              ],
+              "actual": [
+                -4.28,
+                -2.3399999999999994
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0000000000000004
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                -0.3057864376269046,
+                -0.5857864376269046
+              ],
+              "actual": [
+                -0.3057864376269046,
+                -0.5857864376269046
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461897
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                0.28000000000000025,
+                -1.6599999999999997
+              ],
+              "actual": [
+                0.28000000000000025,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8243456498991305
+            },
+            {
+              "robot": "blue3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 7,
+              "to_node": 3,
+              "target": [
+                -1.7199999999999995,
+                -0.3399999999999998
+              ],
+              "actual": [
+                -1.7199999999999995,
+                -0.33999999999999986
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0040958060931118
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red2",
+              "start": [
+                -2.28,
+                -1.9999999999999998
+              ],
+              "end": [
+                -2.28,
+                -1.9999999999999998
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red2",
+              "team": 0,
+              "start": [
+                -1.9999999999999998,
+                -1.9999999999999998
+              ],
+              "end": [
+                2.220446049250313e-16,
+                -1.9999999999999998
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red2",
+              "receiver": "red1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red1",
+              "distance": 0.28
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -2.0,
+                0.28000000000000025
+              ],
+              [
+                -2.28,
+                -1.6599999999999997
+              ],
+              [
+                -2.28,
+                -2.34
+              ],
+              [
+                0.28,
+                2.220446049250313e-16
+              ],
+              [
+                -0.30578643762690483,
+                -1.0799999999999998
+              ],
+              [
+                -0.30578643762690483,
+                1.08
+              ]
+            ],
+            "ball": [
+              -1.9999999999999998,
+              -1.9999999999999998
+            ],
+            "owner": 1,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -2.0
+              ],
+              [
+                -2.28,
+                -1.9999999999999998
+              ],
+              [
+                -4.28,
+                -2.3399999999999994
+              ],
+              [
+                -0.3057864376269046,
+                -0.5857864376269046
+              ],
+              [
+                0.28000000000000025,
+                -1.6599999999999997
+              ],
+              [
+                -1.7199999999999995,
+                -0.33999999999999986
+              ]
+            ],
+            "ball": [
+              2.220446049250313e-16,
+              -1.9999999999999998
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.21601490676403046,
+              0.013429186306893826,
+              -0.06049201637506485
+            ],
+            "all_utilities": [
+              [
+                0.0028564846143126488,
+                0.21601490676403046,
+                0.0528063140809536,
+                -0.13263390958309174,
+                0.04922071099281311,
+                0.055970847606658936,
+                -0.22050565481185913,
+                -0.12512129545211792,
+                -0.015124903060495853
+              ],
+              [
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429186306893826,
+                0.013429171405732632
+              ],
+              [
+                -0.06049201637506485,
+                -0.06106018275022507,
+                -0.030910834670066833,
+                -0.11670155078172684,
+                -0.09687871485948563,
+                0.02360229194164276,
+                -0.14620190858840942,
+                -0.052851758897304535,
+                0.0339709147810936
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue2",
+                "node": 1,
+                "target": [
+                  0.28000000000000025,
+                  -1.6599999999999997
+                ],
+                "marginal_gain": 1.1153880072184603
+              },
+              {
+                "robot": "blue1",
+                "node": 4,
+                "target": [
+                  -0.3057864376269046,
+                  -0.5857864376269046
+                ],
+                "marginal_gain": 0.4030844451955354
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -1.7199999999999995,
+                  -0.3399999999999998
+                ],
+                "marginal_gain": 0.016395793288385398
+              }
+            ],
+            "objective": 1.534868245702381,
+            "covered_tasks": [
+              [
+                -1.9999999999999998,
+                -1.9999999999999998
+              ],
+              [
+                -1.9999999999999996,
+                2.220446049250313e-16
+              ],
+              [
+                -0.5857864376269046,
+                -0.5857864376269046
+              ],
+              [
+                -0.08844198255609959,
+                -1.4118283023249536
+              ],
+              [
+                2.220446049250313e-16,
+                -1.9999999999999998
+              ]
+            ],
+            "weighted_coverage": 1.6323847411887393
+          }
+        },
+        {
+          "step": 5,
+          "actions": [
+            1,
+            1,
+            1,
+            4,
+            2,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "actual": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.220446049250313e-16
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.3052114870440845
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 0,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -2.34
+              ],
+              "actual": [
+                0.0,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.28
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              "actual": [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461901
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 2,
+              "target": [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              "actual": [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.0,
+                -0.34
+              ],
+              "actual": [
+                -3.0,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.2800000000000005
+            }
+          ],
+          "events": [
+            {
+              "type": "HOLD_NO_REACHABLE_PASS",
+              "robot": "red1"
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -2.0
+              ],
+              [
+                -2.28,
+                -1.9999999999999998
+              ],
+              [
+                -4.28,
+                -2.3399999999999994
+              ],
+              [
+                -0.3057864376269046,
+                -0.5857864376269046
+              ],
+              [
+                0.28000000000000025,
+                -1.6599999999999997
+              ],
+              [
+                -1.7199999999999995,
+                -0.33999999999999986
+              ]
+            ],
+            "ball": [
+              2.220446049250313e-16,
+              -1.9999999999999998
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                0.0,
+                -2.34
+              ],
+              [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.220446049250313e-16,
+              -1.9999999999999998
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.19258025288581848,
+              0.059855036437511444,
+              0.007039940916001797
+            ],
+            "all_utilities": [
+              [
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.19258025288581848,
+                0.1925802379846573
+              ],
+              [
+                -0.02175956591963768,
+                0.059855036437511444,
+                0.10713202506303787,
+                -0.07386543601751328,
+                -0.0602903887629509,
+                0.02901347354054451,
+                -0.08423193544149399,
+                -0.08358099311590195,
+                -0.04238133877515793
+              ],
+              [
+                -0.04357754439115524,
+                0.007039940916001797,
+                0.04456137865781784,
+                -0.10302361845970154,
+                -0.061120666563510895,
+                0.019860222935676575,
+                -0.08660472929477692,
+                -0.06244774907827377,
+                -0.013183065690100193
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue2",
+                "node": 2,
+                "target": [
+                  2.2800000000000002,
+                  -1.6599999999999997
+                ],
+                "marginal_gain": 0.9423701916419008
+              },
+              {
+                "robot": "blue1",
+                "node": 4,
+                "target": [
+                  0.28000000000000036,
+                  2.220446049250313e-16
+                ],
+                "marginal_gain": 0.0956727985411184
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -3.0,
+                  -0.34
+                ],
+                "marginal_gain": -0.03413333333333334
+              }
+            ],
+            "objective": 1.003909656849686,
+            "covered_tasks": [
+              [
+                2.220446049250313e-16,
+                -1.9999999999999998
+              ],
+              [
+                3.4450928483976665e-16,
+                2.220446049250313e-16
+              ],
+              [
+                1.4142135623730954,
+                -0.5857864376269046
+              ],
+              [
+                1.8276230972405145,
+                -1.1877230678931046
+              ],
+              [
+                2.0,
+                -1.9999999999999998
+              ]
+            ],
+            "weighted_coverage": 1.1134677135095843
+          }
+        },
+        {
+          "step": 6,
+          "actions": [
+            1,
+            2,
+            2,
+            4,
+            2,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 1,
+              "to_node": 1,
+              "target": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "actual": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 2,
+              "target": [
+                1.72,
+                -1.6599999999999997
+              ],
+              "actual": [
+                1.72,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.72
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 2,
+              "target": [
+                1.72,
+                -2.34
+              ],
+              "actual": [
+                1.72,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.72
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 4,
+              "to_node": 4,
+              "target": [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              "actual": [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              "actual": [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.0,
+                -0.34
+              ],
+              "actual": [
+                -3.0,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red1",
+              "start": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "end": [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red1",
+              "team": 0,
+              "start": [
+                2.220446049250313e-16,
+                -1.9999999999999998
+              ],
+              "end": [
+                2.0,
+                -1.9999999999999998
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 1.9999999999999998,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red1",
+              "receiver": "red2"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red2",
+              "distance": 0.44045431091090487
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                0.0,
+                -2.34
+              ],
+              [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.220446049250313e-16,
+              -1.9999999999999998
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              [
+                1.72,
+                -1.6599999999999997
+              ],
+              [
+                1.72,
+                -2.34
+              ],
+              [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.0,
+              -1.9999999999999998
+            ],
+            "owner": 1,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.13311903178691864,
+              0.12705568969249725,
+              0.1039443090558052
+            ],
+            "all_utilities": [
+              [
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311903178691864,
+                0.13311900198459625
+              ],
+              [
+                -0.026289571076631546,
+                0.04183203727006912,
+                0.12705568969249725,
+                -0.0808025375008583,
+                -0.029885917901992798,
+                0.05351695045828819,
+                -0.10865404456853867,
+                -0.05523160099983215,
+                -0.007234402932226658
+              ],
+              [
+                -0.03325895220041275,
+                0.034822650253772736,
+                0.1039443090558052,
+                -0.08842406421899796,
+                0.0014298027381300926,
+                0.10258206725120544,
+                -0.08322151005268097,
+                -0.011298933066427708,
+                0.04969049245119095
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue2",
+                "node": 2,
+                "target": [
+                  2.2800000000000002,
+                  -1.6599999999999997
+                ],
+                "marginal_gain": 0.9957035249752342
+              },
+              {
+                "robot": "blue1",
+                "node": 4,
+                "target": [
+                  0.28000000000000036,
+                  2.220446049250313e-16
+                ],
+                "marginal_gain": 0.11776418853435014
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -3.0,
+                  -0.34
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 1.1134677135095843,
+            "covered_tasks": [
+              [
+                2.220446049250313e-16,
+                -1.9999999999999998
+              ],
+              [
+                3.4450928483976665e-16,
+                2.220446049250313e-16
+              ],
+              [
+                1.4142135623730954,
+                -0.5857864376269046
+              ],
+              [
+                1.8276230972405145,
+                -1.1877230678931046
+              ],
+              [
+                2.0,
+                -1.9999999999999998
+              ]
+            ],
+            "weighted_coverage": 1.1134677135095843
+          }
+        },
+        {
+          "step": 7,
+          "actions": [
+            5,
+            2,
+            2,
+            5,
+            2,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 1,
+              "to_node": 5,
+              "target": [
+                3.1342135623730947,
+                -0.5857864376269046
+              ],
+              "actual": [
+                3.1342135623730947,
+                -0.5857864376269046
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.6955181300451465
+            },
+            {
+              "robot": "red2",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                1.72,
+                -1.9999999999999998
+              ],
+              "actual": [
+                1.72,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.3400000000000001,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                3.7199999999999998,
+                -2.34
+              ],
+              "actual": [
+                3.7199999999999998,
+                -2.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 1.9999999999999998
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 4,
+              "to_node": 5,
+              "target": [
+                3.694213562373095,
+                -0.5857864376269046
+              ],
+              "actual": [
+                3.694213562373095,
+                -0.5857864376269046
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.4641016151377544
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                2.2800000000000002,
+                -1.5999999999999996
+              ],
+              "actual": [
+                2.2800000000000002,
+                -1.5999999999999996
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.06000000000000005
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.0,
+                -0.34
+              ],
+              "actual": [
+                -3.0,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red2",
+              "start": [
+                1.72,
+                -1.9999999999999998
+              ],
+              "end": [
+                1.72,
+                -1.9999999999999998
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red2",
+              "team": 0,
+              "start": [
+                2.0,
+                -1.9999999999999998
+              ],
+              "end": [
+                4.0,
+                -1.9999999999999998
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red2",
+              "receiver": "red3"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red3",
+              "distance": 0.440454310910905
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                -0.2799999999999998,
+                -1.9999999999999998
+              ],
+              [
+                1.72,
+                -1.6599999999999997
+              ],
+              [
+                1.72,
+                -2.34
+              ],
+              [
+                0.28000000000000036,
+                2.220446049250313e-16
+              ],
+              [
+                2.2800000000000002,
+                -1.6599999999999997
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              2.0,
+              -1.9999999999999998
+            ],
+            "owner": 1,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.1342135623730947,
+                -0.5857864376269046
+              ],
+              [
+                1.72,
+                -1.9999999999999998
+              ],
+              [
+                3.7199999999999998,
+                -2.34
+              ],
+              [
+                3.694213562373095,
+                -0.5857864376269046
+              ],
+              [
+                2.2800000000000002,
+                -1.5999999999999996
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              4.0,
+              -1.9999999999999998
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.2598235309123993,
+              0.06248629093170166,
+              0.15599863231182098
+            ],
+            "all_utilities": [
+              [
+                -0.0010216766968369484,
+                -0.027418598532676697,
+                0.17710436880588531,
+                0.03318746015429497,
+                0.09547114372253418,
+                0.2598235309123993,
+                0.035347867757081985,
+                0.05502113699913025,
+                0.09378791600465775
+              ],
+              [
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248629093170166,
+                0.06248635798692703
+              ],
+              [
+                -0.1187879666686058,
+                -0.025564923882484436,
+                0.15599863231182098,
+                -0.13593359291553497,
+                -0.06291022896766663,
+                0.09865523129701614,
+                -0.11919144541025162,
+                -0.07823626697063446,
+                0.040310852229595184
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 5,
+                "target": [
+                  3.694213562373095,
+                  -0.5857864376269046
+                ],
+                "marginal_gain": 1.2264194056276092
+              },
+              {
+                "robot": "blue2",
+                "node": 2,
+                "target": [
+                  2.2800000000000002,
+                  -1.5999999999999996
+                ],
+                "marginal_gain": 0.0015072827451524794
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -3.0,
+                  -0.34
+                ],
+                "marginal_gain": 0.0
+              }
+            ],
+            "objective": 1.2279266883727618,
+            "covered_tasks": [
+              [
+                2.0,
+                -1.9999999999999998
+              ],
+              [
+                2.0,
+                2.220446049250313e-16
+              ],
+              [
+                3.414213562373095,
+                -0.5857864376269046
+              ],
+              [
+                3.5617376188860606,
+                -0.7506099048911512
+              ],
+              [
+                4.0,
+                -1.9999999999999998
+              ]
+            ],
+            "weighted_coverage": 1.3219027314431018
+          }
+        },
+        {
+          "step": 8,
+          "actions": [
+            5,
+            5,
+            2,
+            5,
+            2,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "actual": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461902
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 2,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                0.34000000000000025
+              ],
+              "actual": [
+                3.7199999999999998,
+                0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 3.0782462539569506
+            },
+            {
+              "robot": "red3",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                3.7199999999999998,
+                -1.9999999999999998
+              ],
+              "actual": [
+                3.7199999999999998,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.3400000000000001,
+              "alignment_distance": 0.3959797974644668
+            },
+            {
+              "robot": "blue1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                4.28,
+                2.220446049250313e-16
+              ],
+              "actual": [
+                4.28,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.8284271247461902
+            },
+            {
+              "robot": "blue2",
+              "action": "HOLD_REGION",
+              "from_node": 2,
+              "to_node": 2,
+              "target": [
+                4.28,
+                -1.5999999999999996
+              ],
+              "actual": [
+                4.28,
+                -1.5999999999999996
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.0,
+                -0.34
+              ],
+              "actual": [
+                -3.0,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red3",
+              "start": [
+                3.7199999999999998,
+                -1.9999999999999998
+              ],
+              "end": [
+                4.0,
+                -2.28
+              ],
+              "theta": 1.5707963267948966
+            },
+            {
+              "type": "KICK",
+              "robot": "red3",
+              "team": 0,
+              "start": [
+                4.0,
+                -1.9999999999999998
+              ],
+              "end": [
+                4.0,
+                2.220446049250313e-16
+              ],
+              "theta": 1.5707963267948966,
+              "nominal_range": 2.0,
+              "travelled": 2.0,
+              "shot": false,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "BALL_SETTLED_REDETECT"
+            },
+            {
+              "type": "COMPLETED_PASS",
+              "passer": "red3",
+              "receiver": "red1"
+            },
+            {
+              "type": "BALL_CONTROL_ACQUIRED",
+              "robot": "red1",
+              "distance": 0.28000000000000025
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.1342135623730947,
+                -0.5857864376269046
+              ],
+              [
+                1.72,
+                -1.9999999999999998
+              ],
+              [
+                3.7199999999999998,
+                -2.34
+              ],
+              [
+                3.694213562373095,
+                -0.5857864376269046
+              ],
+              [
+                2.2800000000000002,
+                -1.5999999999999996
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              4.0,
+              -1.9999999999999998
+            ],
+            "owner": 2,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              [
+                3.7199999999999998,
+                0.3400000000000001
+              ],
+              [
+                4.0,
+                -2.28
+              ],
+              [
+                4.28,
+                2.220446049250313e-16
+              ],
+              [
+                4.28,
+                -1.5999999999999996
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              4.0,
+              2.220446049250313e-16
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.2742340564727783,
+              0.08141445368528366,
+              0.1486026644706726
+            ],
+            "all_utilities": [
+              [
+                0.14352001249790192,
+                0.08816980570554733,
+                0.04212751239538193,
+                0.18169204890727997,
+                0.15911127626895905,
+                0.2742340564727783,
+                0.17353162169456482,
+                0.16380304098129272,
+                0.13457468152046204
+              ],
+              [
+                0.04129435867071152,
+                0.04094532132148743,
+                0.04344526305794716,
+                0.07420434802770615,
+                0.06356099247932434,
+                0.08141445368528366,
+                0.0715181976556778,
+                0.06495219469070435,
+                0.046774134039878845
+              ],
+              [
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.1486026644706726,
+                0.14860272407531738
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 5,
+                "target": [
+                  4.28,
+                  2.220446049250313e-16
+                ],
+                "marginal_gain": 0.270412612991202
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -3.0,
+                  -0.34
+                ],
+                "marginal_gain": 0.0
+              },
+              {
+                "robot": "blue2",
+                "node": 2,
+                "target": [
+                  4.28,
+                  -1.5999999999999996
+                ],
+                "marginal_gain": -0.05333333333333333
+              }
+            ],
+            "objective": 0.21707927965786866,
+            "covered_tasks": [
+              [
+                4.0,
+                -1.9999999999999998
+              ],
+              [
+                4.0,
+                2.220446049250313e-16
+              ]
+            ],
+            "weighted_coverage": 0.29250400298443374
+          }
+        },
+        {
+          "step": 9,
+          "actions": [
+            5,
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "execution": [
+            {
+              "robot": "red1",
+              "action": "HOLD_REGION",
+              "from_node": 5,
+              "to_node": 5,
+              "target": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "actual": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0,
+              "alignment_distance": 0.0
+            },
+            {
+              "robot": "red2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 1,
+              "target": [
+                0.0,
+                -1.66
+              ],
+              "actual": [
+                0.0,
+                -1.66
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.223553006652101
+            },
+            {
+              "robot": "red3",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 2,
+              "to_node": 4,
+              "target": [
+                0.0,
+                -0.34
+              ],
+              "actual": [
+                0.0,
+                -0.3400000000000001
+              ],
+              "status": "SUCCEEDED",
+              "distance": 4.445627064880724
+            },
+            {
+              "robot": "blue1",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 5,
+              "to_node": 2,
+              "target": [
+                4.28,
+                -1.9999999999999998
+              ],
+              "actual": [
+                4.28,
+                -1.9999999999999998
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue2",
+              "action": "MOVE_TO_NEIGHBOUR",
+              "from_node": 2,
+              "to_node": 5,
+              "target": [
+                4.28,
+                0.40000000000000024
+              ],
+              "actual": [
+                4.28,
+                0.40000000000000036
+              ],
+              "status": "SUCCEEDED",
+              "distance": 2.0
+            },
+            {
+              "robot": "blue3",
+              "action": "HOLD_REGION",
+              "from_node": 3,
+              "to_node": 3,
+              "target": [
+                -3.0,
+                -0.34
+              ],
+              "actual": [
+                -3.0,
+                -0.34
+              ],
+              "status": "SUCCEEDED",
+              "distance": 0.0
+            }
+          ],
+          "events": [
+            {
+              "type": "KICK_ALIGNMENT",
+              "robot": "red1",
+              "start": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "end": [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              "theta": 0.0
+            },
+            {
+              "type": "KICK",
+              "robot": "red1",
+              "team": 0,
+              "start": [
+                4.0,
+                2.220446049250313e-16
+              ],
+              "end": [
+                4.5,
+                2.220446049250313e-16
+              ],
+              "theta": 0.0,
+              "nominal_range": 2.0,
+              "travelled": 0.5,
+              "shot": true,
+              "foot": "right",
+              "strength": "single_nominal_setting"
+            },
+            {
+              "type": "GOAL",
+              "team": 0
+            }
+          ],
+          "before": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              [
+                3.7199999999999998,
+                0.3400000000000001
+              ],
+              [
+                4.0,
+                -2.28
+              ],
+              [
+                4.28,
+                2.220446049250313e-16
+              ],
+              [
+                4.28,
+                -1.5999999999999996
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              4.0,
+              2.220446049250313e-16
+            ],
+            "owner": 0,
+            "possession_team": 0
+          },
+          "after": {
+            "seed": 92924137,
+            "red_direction": 1,
+            "robots": [
+              [
+                3.7199999999999998,
+                2.220446049250313e-16
+              ],
+              [
+                0.0,
+                -1.66
+              ],
+              [
+                0.0,
+                -0.3400000000000001
+              ],
+              [
+                4.28,
+                -1.9999999999999998
+              ],
+              [
+                4.28,
+                0.40000000000000036
+              ],
+              [
+                -3.0,
+                -0.34
+              ]
+            ],
+            "ball": [
+              4.5,
+              2.220446049250313e-16
+            ],
+            "owner": null,
+            "possession_team": 0
+          },
+          "policy_utilities": {
+            "selected_utilities": [
+              0.34062162041664124,
+              0.19952209293842316,
+              0.21964722871780396
+            ],
+            "all_utilities": [
+              [
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062162041664124,
+                0.34062156081199646
+              ],
+              [
+                0.22269940376281738,
+                0.19952209293842316,
+                0.1751078963279724,
+                0.22194339334964752,
+                0.19418255984783173,
+                0.18911480903625488,
+                0.19096584618091583,
+                0.16505077481269836,
+                0.13455334305763245
+              ],
+              [
+                0.19759653508663177,
+                0.18602068722248077,
+                0.15518847107887268,
+                0.2448248714208603,
+                0.21964722871780396,
+                0.21855001151561737,
+                0.2189617156982422,
+                0.19064095616340637,
+                0.1988399177789688
+              ]
+            ],
+            "interpretation": "Learned VDN utilities, not causal credit percentages."
+          },
+          "baseline_allocation": {
+            "method": "sequential_marginal_gain_greedy",
+            "settings": {
+              "ball_weight": 1.5,
+              "support_weight": 3.0,
+              "travel_weight": 0.08,
+              "congestion_weight": 0.5,
+              "race_weight": 0.0,
+              "coverage_scale": 0.65,
+              "congestion_radius": 0.85
+            },
+            "assignments": [
+              {
+                "robot": "blue1",
+                "node": 2,
+                "target": [
+                  4.28,
+                  -1.9999999999999998
+                ],
+                "marginal_gain": 0.24011275719934155
+              },
+              {
+                "robot": "blue3",
+                "node": 3,
+                "target": [
+                  -3.0,
+                  -0.34
+                ],
+                "marginal_gain": 0.0
+              },
+              {
+                "robot": "blue2",
+                "node": 5,
+                "target": [
+                  4.28,
+                  0.40000000000000024
+                ],
+                "marginal_gain": -0.01729823742236057
+              }
+            ],
+            "objective": 0.22281451977698097,
+            "covered_tasks": [
+              [
+                4.0,
+                2.220446049250313e-16
+              ],
+              [
+                4.0,
+                -1.9999999999999998
+              ],
+              [
+                4.0,
+                2.0
+              ]
+            ],
+            "weighted_coverage": 0.32948118644364766
+          }
+        }
+      ]
+    }
+  ],
+  "source_match": {
+    "seed": 920001,
+    "score": [
+      3,
+      1
+    ],
+    "steps": 21
+  },
+  "note": "Frozen selected actions only. No training, rewards, weights, or new policy inference are included."
+}

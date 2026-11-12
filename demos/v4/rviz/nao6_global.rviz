@@ -1,0 +1,312 @@
+{
+  "Panels": [
+    {
+      "Class": "rviz/Displays",
+      "Name": "Displays"
+    }
+  ],
+  "Visualization Manager": {
+    "Class": "",
+    "Global Options": {
+      "Background Color": "20; 28; 38",
+      "Fixed Frame": "map",
+      "Frame Rate": 30
+    },
+    "Displays": [
+      {
+        "Class": "rviz/Map",
+        "Name": "Known field /map",
+        "Enabled": true,
+        "Topic": "/map",
+        "Alpha": 0.0,
+        "Draw Behind": true
+      },
+      {
+        "Class": "rviz/MarkerArray",
+        "Name": "Figure 3 fixed pitch",
+        "Enabled": true,
+        "Marker Topic": "/field_markings"
+      },
+      {
+        "Class": "rviz/MarkerArray",
+        "Name": "Nine-region planning overlay",
+        "Enabled": true,
+        "Marker Topic": "/planning_graph"
+      },
+      {
+        "Class": "rviz/MarkerArray",
+        "Name": "Ball, labels and phases",
+        "Enabled": true,
+        "Marker Topic": "/team_markers"
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "red1 NAO6",
+        "Enabled": true,
+        "Robot Description": "/red1/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "red1 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_red1",
+        "Shape": "Arrow",
+        "Color": "240; 70; 70",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "red1 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_red1",
+        "Color": "240; 70; 70",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "red2 NAO6",
+        "Enabled": true,
+        "Robot Description": "/red2/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "red2 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_red2",
+        "Shape": "Arrow",
+        "Color": "240; 70; 70",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "red2 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_red2",
+        "Color": "240; 70; 70",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "red3 NAO6",
+        "Enabled": true,
+        "Robot Description": "/red3/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "red3 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_red3",
+        "Shape": "Arrow",
+        "Color": "240; 70; 70",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "red3 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_red3",
+        "Color": "240; 70; 70",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "red4 NAO6",
+        "Enabled": true,
+        "Robot Description": "/red4/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "red4 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_red4",
+        "Shape": "Arrow",
+        "Color": "240; 70; 70",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "red4 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_red4",
+        "Color": "240; 70; 70",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "blue1 NAO6",
+        "Enabled": true,
+        "Robot Description": "/blue1/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "blue1 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_blue1",
+        "Shape": "Arrow",
+        "Color": "70; 155; 255",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "blue1 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_blue1",
+        "Color": "70; 155; 255",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "blue2 NAO6",
+        "Enabled": true,
+        "Robot Description": "/blue2/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "blue2 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_blue2",
+        "Shape": "Arrow",
+        "Color": "70; 155; 255",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "blue2 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_blue2",
+        "Color": "70; 155; 255",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "blue3 NAO6",
+        "Enabled": true,
+        "Robot Description": "/blue3/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "blue3 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_blue3",
+        "Shape": "Arrow",
+        "Color": "70; 155; 255",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "blue3 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_blue3",
+        "Color": "70; 155; 255",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/RobotModel",
+        "Name": "blue4 NAO6",
+        "Enabled": true,
+        "Robot Description": "/blue4/robot_description",
+        "Visual Enabled": true,
+        "Collision Enabled": false
+      },
+      {
+        "Class": "rviz/Pose",
+        "Name": "blue4 loc_pose",
+        "Enabled": true,
+        "Topic": "/loc_pose_blue4",
+        "Shape": "Arrow",
+        "Color": "70; 155; 255",
+        "Shaft Length": 0.38,
+        "Shaft Radius": 0.022,
+        "Head Length": 0.14,
+        "Head Radius": 0.06
+      },
+      {
+        "Class": "rviz/Path",
+        "Name": "blue4 path (hidden)",
+        "Enabled": false,
+        "Topic": "/path_blue4",
+        "Color": "70; 155; 255",
+        "Line Style": "Lines",
+        "Line Width": 0.025,
+        "Buffer Length": 1
+      },
+      {
+        "Class": "rviz/TF",
+        "Name": "Robot frames (optional)",
+        "Enabled": false
+      }
+    ],
+    "Views": {
+      "Current": {
+        "Class": "rviz/Orbit",
+        "Distance": 14.6,
+        "Pitch": 1.5697963,
+        "Yaw": -1.5707963,
+        "Focal Point": {
+          "X": 4.5,
+          "Y": 2.8,
+          "Z": 0
+        },
+        "Target Frame": "map",
+        "Near Clip Distance": 0.01
+      }
+    }
+  },
+  "Window Geometry": {
+    "Width": 1800,
+    "Height": 990,
+    "X": 45,
+    "Y": 35,
+    "Hide Left Dock": false,
+    "Hide Right Dock": true
+  }
+}

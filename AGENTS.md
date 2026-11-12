@@ -26,3 +26,12 @@ per round and selected seed 15. A turnover ends T; the counterattack begins at T
 Do not present either scripted edition as trained-policy or physical skill validation.
 Both packages use the existing collision-visual NAO6 model and hide path displays.
 Future changes must preserve the published recordings and separate edition evidence.
+
+The team leader authorised the matching V3/V4 public demo editions on 2026-11-10.
+Keep them under demos/v3 and demos/v4. Preserve V1/V2 and original recordings.
+Publish selected action exports, common kinematic execution, model/launch resources,
+videos, losslessly compressed bags, evidence summaries and portable English instructions.
+Keep GEVD/private research snapshots, learned weights, training/reward implementations,
+machine-specific log/parameter files and source course documents outside this repository.
+V3/V4 source execution reproduces fixed policy-derived plans, not new online inference.
+V4 recordings retain their historical V3-SG label; this is disclosed in its README.

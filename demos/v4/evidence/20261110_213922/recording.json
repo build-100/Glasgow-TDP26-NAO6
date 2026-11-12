@@ -1,0 +1,55 @@
+{
+  "edition": "v4",
+  "verified_run": "20261110_213922",
+  "bag_filename": "nao6_v3_sgre_first_to_three.bag",
+  "bag_sha256": "74fad7b64f6c2264a07fa3359fb6e9a97e7def3ec5693af74cf2f518d8d65365",
+  "bag_bytes": 244732556,
+  "compressed_parts": [
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part01",
+      "bytes": 20971520,
+      "sha256": "a5da30f206fbc270517a8967c28528914380c2794cf7bd68b70ae3c121c543a9"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part02",
+      "bytes": 20971520,
+      "sha256": "321136e25f7fcdee1539be4013b7db9e24192274650ac33a2f1d1972ec8fc2de"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part03",
+      "bytes": 20971520,
+      "sha256": "a0401796576f8717ece6d20cab57b98e1989b2828a49d8a5cb196b8c0b85ae67"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part04",
+      "bytes": 20971520,
+      "sha256": "9e83d0582a413f6c21a1363d18fedcc4e3b35abb1b7cefb4b8f8eff5e54155ec"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part05",
+      "bytes": 20971520,
+      "sha256": "9d2bcc6dfc3812163c21328dfa536d311b59f115e8e86de3cd071ae5ae667db8"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part06",
+      "bytes": 20971520,
+      "sha256": "f2959da3b4b9f5cd4be3a5f1941e0c99e1dcc7c5dc49ae6122e396ca7ad6b1bc"
+    },
+    {
+      "file": "nao6_v3_sgre_first_to_three.bag.gz.part07",
+      "bytes": 19950380,
+      "sha256": "b916cc331ce793e139ae2ba10b05155ec5853fdf2132a6f668ceeabead0a4c89"
+    }
+  ],
+  "compression": "lossless gzip, optionally split; restore with scripts/prepare_recording.py",
+  "video_sha256": "4e198aabc7b675d9b82fa3934d8995f4ab283bf614a0d35310a59816983cd842",
+  "original_recorded_label": "V3-SG",
+  "source_runtime_evidence": "Actual verified Ubuntu 20.04 / ROS Noetic run on 2026-11-10.",
+  "packaging_changes": [
+    "portable public geometry/skills imports",
+    "selected action-plan export without training/rewards/weights",
+    "LF executable scripts and portable documentation",
+    "lossless bag compression only"
+  ],
+  "scope": "Kinematic ROS demonstration; not physical gait or autonomous hardware validation."
+}

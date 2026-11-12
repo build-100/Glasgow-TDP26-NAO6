@@ -1,0 +1,11 @@
+{
+  "rows": 3,
+  "cols": 3,
+  "length_m": 9.0,
+  "width_m": 6.0,
+  "origin": "lower-left corner in field frame; +x along length; +y along width",
+  "node_id": "row * 3 + column; row 0 is lowest y",
+  "movement_edges": "immediate cardinal and diagonal neighbours only",
+  "goal_width_m": 2.6,
+  "note": "Nominal course geometry. A different hardware test scale must be explicitly recorded."
+}
