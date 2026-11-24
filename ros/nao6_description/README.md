@@ -116,5 +116,7 @@ Record actual states and outcomes. Replay the recorded messages for the global R
 ## Validation status
 
 Local checks verify source/resource hashes, XML trees, retained inertia/contact
-data, joint selection and referenced mesh existence. They are not a ROS/Gazebo
-runtime test or proof of stable walking/kicking/recovery on NAO6 hardware.
+data, joint selection and referenced mesh existence. The [whole-body results](control/whole_body/README.md#measured-results)
+record forward walking, right-foot ball displacement, prone/supine recovery,
+ROS commands and measured encoder feedback on Ubuntu 20.04. Hardware confirmation
+of balance, recovery and kick range is a separate step.

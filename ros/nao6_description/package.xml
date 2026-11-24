@@ -2,7 +2,7 @@
 <package format="2">
   <name>nao6_description</name>
   <version>0.1.0</version>
-  <description>Selected NAO6 descriptions and standalone model-inspection launches.</description>
+  <description>NAO6 descriptions, ROS model inspection and a whole-body motion workbench.</description>
   <maintainer email="build-100@users.noreply.github.com">build-100</maintainer>
   <license>Apache-2.0 (upstream model assets; see LICENSE.upstream)</license>
   <license>LicenseRef-Team-Educational-Use (original project files; see repository LICENSE.txt)</license>

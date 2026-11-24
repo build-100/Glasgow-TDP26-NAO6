@@ -1,0 +1,346 @@
+{
+  "test_date": "2026-11-24",
+  "environment": "Ubuntu 20.04.6, ROS Noetic, Python 3.8.10, Webots R2023b",
+  "source_revision": "8a0949302aac5d610339fa02f3e4cfc437abb17d",
+  "lf_sha256": {
+    "nao6_simplified.urdf": "5dd97a1a2d233b9de4771f1770e95d37479780283e61309ad5a675c2e77aab78",
+    "whole_body.launch": "d6412af1bf9f883cca0dd3c1f9d573daf99af3c6754f3aadba813ad059368ad7",
+    "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39",
+    "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+    "motion_workbench.py": "377d52501d6f648cfee6d438c37a503a8e64b21ff4b1ea52fd32db025729b4fe"
+  },
+  "physics_step_ms": 16,
+  "comparison_before_adaptation": {
+    "walk": {
+      "passed": true,
+      "final_posture": "upright",
+      "ball_displacement_m": 0.0
+    },
+    "kick": {
+      "passed": false,
+      "final_posture": "moving",
+      "ball_displacement_m": 1.412194
+    },
+    "front": {
+      "passed": false,
+      "final_posture": "moving",
+      "ball_displacement_m": null
+    },
+    "back": {
+      "passed": false,
+      "final_posture": "back",
+      "ball_displacement_m": 0.0
+    }
+  },
+  "fresh_world_runs": [
+    {
+      "walk": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 7.312,
+        "final_torso_height_m": 0.320901,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.002855,
+        "forward_distance_m": 0.463505
+      },
+      "turn_left": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 1.84,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 3.3e-05,
+        "measured_yaw_change_deg": 4.8182
+      },
+      "turn_right": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 1.088,
+        "final_torso_height_m": 0.320766,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.020092,
+        "measured_yaw_change_deg": -7.418349
+      },
+      "kick": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 2.976,
+        "final_torso_height_m": 0.320855,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.009081,
+        "forward_ball_displacement_m": 1.018388
+      },
+      "front": {
+        "start": "front",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 6.208,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.201174,
+        "max_final_joint_error_rad": 0.000118,
+        "contacts_before_gravity_settling": 0
+      },
+      "back": {
+        "start": "back",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 6.608,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.05821,
+        "max_final_joint_error_rad": 3.1e-05,
+        "contacts_before_gravity_settling": 0
+      }
+    },
+    {
+      "walk": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 7.312,
+        "final_torso_height_m": 0.320901,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.002855,
+        "forward_distance_m": 0.463505
+      },
+      "turn_left": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 1.84,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 3.3e-05,
+        "measured_yaw_change_deg": 4.8182
+      },
+      "turn_right": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 1.088,
+        "final_torso_height_m": 0.320766,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.020092,
+        "measured_yaw_change_deg": -7.418349
+      },
+      "kick": {
+        "start": "upright",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 2.976,
+        "final_torso_height_m": 0.320855,
+        "initial_torso_height_m": 0.321051,
+        "max_final_joint_error_rad": 0.009081,
+        "forward_ball_displacement_m": 1.018388
+      },
+      "front": {
+        "start": "front",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 6.208,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.201174,
+        "max_final_joint_error_rad": 0.000118,
+        "contacts_before_gravity_settling": 0
+      },
+      "back": {
+        "start": "back",
+        "finish": "upright",
+        "passed": true,
+        "duration_s": 6.608,
+        "final_torso_height_m": 0.320924,
+        "initial_torso_height_m": 0.05821,
+        "max_final_joint_error_rad": 3.1e-05,
+        "contacts_before_gravity_settling": 0
+      }
+    }
+  ],
+  "ros_launch_tests": {
+    "upright": {
+      "robot_id": "red1",
+      "passed": true,
+      "independent_coordinates": 21,
+      "start_posture": "upright",
+      "joint_state_entries": 22,
+      "transform_verified": [
+        "red1/base_link",
+        "red1/CameraTop"
+      ],
+      "final_posture": "upright",
+      "events": [
+        {
+          "robot_id": "red1",
+          "sequence_id": 1,
+          "status": "RUNNING",
+          "stamp_s": 0.9440000000000001,
+          "reason": "STAND"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 1,
+          "status": "SUCCEEDED",
+          "stamp_s": 1.536,
+          "reason": "final encoders and upright posture settled"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 2,
+          "status": "RUNNING",
+          "stamp_s": 1.568,
+          "reason": "HEAD_LOOK"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 2,
+          "status": "SUCCEEDED",
+          "stamp_s": 1.936,
+          "reason": "final encoders and upright posture settled"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 3,
+          "status": "RUNNING",
+          "stamp_s": 1.984,
+          "reason": "WALK"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 3,
+          "status": "SUCCEEDED",
+          "stamp_s": 9.312,
+          "reason": "final encoders and upright posture settled"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": 4,
+          "status": "SUCCEEDED",
+          "stamp_s": 9.344,
+          "reason": "held measured joint positions"
+        }
+      ],
+      "head_yaw_target_rad": 0.35,
+      "observed_head_yaw_max_rad": 0.3445328903188026
+    },
+    "front": {
+      "robot_id": "red1",
+      "passed": true,
+      "independent_coordinates": 21,
+      "start_posture": "front",
+      "joint_state_entries": 22,
+      "transform_verified": [
+        "red1/base_link",
+        "red1/CameraTop"
+      ],
+      "final_posture": "upright",
+      "events": [
+        {
+          "robot_id": "red1",
+          "sequence_id": -1,
+          "status": "RUNNING",
+          "stamp_s": 1.008,
+          "reason": "automatic recovery from front"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": -1,
+          "status": "SUCCEEDED",
+          "stamp_s": 7.216,
+          "reason": "final encoders and upright posture settled"
+        }
+      ]
+    },
+    "back": {
+      "robot_id": "red1",
+      "passed": true,
+      "independent_coordinates": 21,
+      "start_posture": "back",
+      "joint_state_entries": 22,
+      "transform_verified": [
+        "red1/base_link",
+        "red1/CameraTop"
+      ],
+      "final_posture": "upright",
+      "events": [
+        {
+          "robot_id": "red1",
+          "sequence_id": -1,
+          "status": "RUNNING",
+          "stamp_s": 1.008,
+          "reason": "automatic recovery from back"
+        },
+        {
+          "robot_id": "red1",
+          "sequence_id": -1,
+          "status": "SUCCEEDED",
+          "stamp_s": 7.6160000000000005,
+          "reason": "final encoders and upright posture settled"
+        }
+      ]
+    }
+  },
+  "front_release_height_comparison": [
+    {
+      "release_height_m": 0.28,
+      "before_support_hold": true,
+      "after_support_hold": true
+    },
+    {
+      "release_height_m": 0.29,
+      "before_support_hold": false,
+      "after_support_hold": true
+    },
+    {
+      "release_height_m": 0.3,
+      "before_support_hold": false,
+      "after_support_hold": true
+    },
+    {
+      "release_height_m": 0.31,
+      "before_support_hold": false,
+      "after_support_hold": true
+    },
+    {
+      "release_height_m": 0.32,
+      "before_support_hold": true,
+      "after_support_hold": true
+    }
+  ],
+  "additional_front_heights_after_fix": [
+    {
+      "release_height_m": 0.285,
+      "passed": true,
+      "dispatch_posture": "front",
+      "final_posture": "upright"
+    },
+    {
+      "release_height_m": 0.305,
+      "passed": true,
+      "dispatch_posture": "front",
+      "final_posture": "upright"
+    },
+    {
+      "release_height_m": 0.315,
+      "passed": true,
+      "dispatch_posture": "front",
+      "final_posture": "upright"
+    }
+  ],
+  "rosbag_replay": {
+    "passed": true,
+    "recorded_joint_messages": 530,
+    "replayed_joint_messages": 530,
+    "replayed_skill_results": [
+      "RUNNING",
+      "SUCCEEDED",
+      "RUNNING",
+      "SUCCEEDED",
+      "RUNNING",
+      "SUCCEEDED",
+      "SUCCEEDED"
+    ]
+  },
+  "scope": "Single simulated robot on a level floor. Independent resets of a deterministic fixture. Forward ball travel is sampled 0.5 s after skill completion. Hardware and match-level navigation require separate tests."
+}

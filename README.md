@@ -10,7 +10,7 @@ Private research and learned strategy/reward implementations are not included.
 
 | Folder | Contents |
 |---|---|
-| `ros/nao6_description/` | Source/adapted URDFs, mesh assets, RViz configuration and Gazebo model-inspection scene |
+| `ros/nao6_description/` | Source and simplified URDFs, Webots skill controller, ROS launch files and RViz configuration |
 | `scripts/` | Reproducible model preparation and structural checks |
 | `src/nao_football/` | Basic graph and shared skill-interface scaffold |
 | `configs/` | Field geometry |
@@ -38,8 +38,11 @@ unique pose streams, fixed map, TF chains and matching recorded/replayed message
 checks also pass. V1/V2 are fixed-route demonstrations with inspection joint poses. V3/V4 execute frozen exports from local
 policy experiments and add illustrative joint animation; method-level results and limits are documented
 separately. The public packages contain no learned weights or training/reward implementation and do not
-perform new policy inference. The separate motion workbench has offline joint and controller checks.
-Walking stability, ball displacement and front/back recovery require measured simulator trials and hardware tests.
+perform new policy inference. On Ubuntu 20.04, the separate one-robot Webots workbench passed
+forward walking, a fixed right-foot kick and both fallen-start recovery trials. ROS Noetic also
+returned measured joint positions and the robot's camera transform. See the
+[measured results and test conditions](ros/nao6_description/control/whole_body/README.md#measured-results).
+Physical NAO6 validation remains open.
 
 Original project material is intended for use only by team members authorised
 by the repository owner: see [LICENSE.txt](LICENSE.txt). Third-party models and
