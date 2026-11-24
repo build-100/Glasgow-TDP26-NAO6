@@ -2,8 +2,10 @@
 
 Group repository for the University of Glasgow TDP course project.
 
-This repository contains selected robot model resources, ROS launch files,
-a minimal planning scaffold and four preserved global RViz demonstrations.
+For a single robot that accepts walking, kicking and recovery commands, start with
+the [NAO6 whole-body motion workbench](ros/nao6_description/control/whole_body/README.md).
+It pairs the selected V6 joint description with the Glasgow project's Webots body and motion references.
+The repository also contains ROS launch files, a minimal planning scaffold and four global RViz demonstrations.
 Private research and learned strategy/reward implementations are not included.
 
 | Folder | Contents |
@@ -16,7 +18,7 @@ Private research and learned strategy/reward implementations are not included.
 | [`demos/`](demos/README.md) | V1–V4 demo execution source, models, launch files, videos, ROS bags and validation reports |
 
 Start with [model setup and launch instructions](ros/nao6_description/README.md).
-The platform target is Ubuntu 20.04, ROS Noetic and Gazebo Classic 11.
+The team presentation uses Ubuntu 20.04, ROS Noetic and RViz. Webots R2023b runs the independent local motion trials.
 
 ## Demonstrations
 
@@ -36,8 +38,8 @@ unique pose streams, fixed map, TF chains and matching recorded/replayed message
 checks also pass. V1/V2 are fixed-route demonstrations with inspection joint poses. V3/V4 execute frozen exports from local
 policy experiments and add illustrative joint animation; method-level results and limits are documented
 separately. The public packages contain no learned weights or training/reward implementation and do not
-perform new policy inference. None of the demonstrations establishes a physical gait. Gazebo skill execution, controller
-compatibility, balanced walking, kicking, get-up behaviour and real-robot validation remain outstanding.
+perform new policy inference. The separate motion workbench has offline joint and controller checks.
+Walking stability, ball displacement and front/back recovery require measured simulator trials and hardware tests.
 
 Original project material is intended for use only by team members authorised
 by the repository owner: see [LICENSE.txt](LICENSE.txt). Third-party models and
