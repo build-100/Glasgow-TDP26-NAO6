@@ -1,10 +1,15 @@
 <launch>
   <arg name="wenao" default="auto" doc="Pinned Wenao checkout or auto for a verified local download"/>
   <arg name="robot_id" default="red1"/>
+  <arg name="start_posture" default="upright" doc="Use front or back for an automatic recovery trial"/>
   <arg name="webots" default="webots"/>
   <group ns="$(arg robot_id)">
     <param name="robot_description" textfile="$(find nao6_description)/urdf/nao6_simplified.urdf"/>
     <node pkg="nao6_description" type="motion_workbench.py" name="whole_body_lab" output="screen"
-          args="run --case ros --robot-id $(arg robot_id) --wenao &quot;$(arg wenao)&quot; --webots &quot;$(arg webots)&quot;"/>
+          args="run --case ros --robot-id $(arg robot_id) --start-posture $(arg start_posture) --wenao &quot;$(arg wenao)&quot; --webots &quot;$(arg webots)&quot;"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="tf_prefix" type="str" value="$(arg robot_id)"/>
+      <remap from="joint_states" to="/joint_states_$(arg robot_id)"/>
+    </node>
   </group>
 </launch>
