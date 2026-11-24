@@ -83,7 +83,7 @@ def inspect(model, library):
     return result
 
 
-def prepare(wenao, urdf, output, trial, robot_id):
+def prepare(wenao, urdf, output, trial, robot_id, start_posture="upright"):
     # Only locally installed upstream assets enter the temporary Webots project.
     # Preserve the three original PROTOs and their Webots-only licence headers.
     source = wenao / "protos"
@@ -91,6 +91,8 @@ def prepare(wenao, urdf, output, trial, robot_id):
         checked_bytes(source / name, digest)
     if not re.fullmatch(r"(red|blue)[1-4]", robot_id):
         raise ValueError("robot_id must be red1..red4 or blue1..blue4")
+    if start_posture not in ("upright", "front", "back") or (trial != "ros" and start_posture != "upright"):
+        raise ValueError("Use --start-posture only for a live ROS world; fixed trials set their own posture")
     if output is None:
         root = Path(tempfile.mkdtemp(prefix="nao6_motion_"))
     else:
@@ -129,9 +131,12 @@ def prepare(wenao, urdf, output, trial, robot_id):
                   "cfg.update(wenao=str(root), urdf=str(root / 'urdf' / 'nao6_simplified.urdf'),\n"
                   "           report=str(root / 'trial_result.json'))\nrun(cfg)\n")
     (controllers / "nao6_skills.py").write_text(controller, encoding="utf-8")
-    angle = {"front": 1.5708, "back": -1.5708}.get(trial, 0)
-    height = 0.19 if angle else 0.334
-    ball_x = 0.15 if trial in ("kick", "ros") else 1.50
+    initial = start_posture if trial == "ros" else trial
+    angle = {"front": 1.5708, "back": -1.5708}.get(initial, 0)
+    # In the neutral prone pose the hands extend farther down than the torso.
+    # Release above the surface; gravity and the posture gate establish the start.
+    height = {"front": 0.32, "back": 0.19}.get(initial, 0.334)
+    ball_x = 0.15 if trial in ("kick", "ros") and not angle else 1.50
     is_supervisor = "FALSE" if trial == "ros" else "TRUE"
     world = f"""#VRML_SIM R2023b utf8
 EXTERNPROTO "../protos/NaoV6.proto"
@@ -140,12 +145,14 @@ Viewpoint {{ orientation 0.45 0.20 0.87 2.1 position 1.3 -1.6 0.95 }}
 Background {{ skyColor [0.72 0.79 0.85] }}
 DirectionalLight {{ direction -0.4 0.3 -1 }}
 Solid {{
-  translation 0 0 -0.025
+  name "test floor"
+  translation 0 0 -0.5
   children [ Shape {{ appearance PBRAppearance {{ baseColor 0.12 0.45 0.22 roughness 1 metalness 0 }}
-    geometry DEF FLOOR Box {{ size 4 3 0.05 }} }} ]
+    geometry DEF FLOOR Box {{ size 4 3 1 }} }} ]
   boundingObject USE FLOOR
 }}
 DEF TEST_BALL Solid {{
+  name "test ball"
   translation {ball_x} -0.055 0.051
   children [ Shape {{ appearance PBRAppearance {{ baseColor 0.95 0.57 0.15 roughness 1 metalness 0 }}
     geometry DEF BALL Sphere {{ radius 0.05 }} }} ]
@@ -169,8 +176,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("inspect", "prepare", "run"))
     parser.add_argument("--wenao", default="auto", help="Pinned Wenao directory or auto (verified cache)")
-    parser.add_argument("--case", choices=("walk", "kick", "front", "back", "ros"), default="walk")
+    parser.add_argument("--case", choices=("walk", "turn_left", "turn_right", "kick", "front", "back", "ros"), default="walk")
     parser.add_argument("--robot-id", default="red1")
+    parser.add_argument("--start-posture", choices=("upright", "front", "back"), default="upright",
+                        help="Initial posture of the live ROS fixture")
     parser.add_argument("--output", help="Empty directory for a new trial (default: temporary directory)")
     parser.add_argument("--webots", default="webots", help="Installed Webots executable")
     # roslaunch passes node name and logging remaps to the wrapper.
@@ -183,7 +192,7 @@ def main():
     if args.mode == "inspect":
         print(json.dumps(inspect(model, library), indent=2))
         return 0
-    path = prepare(wenao, urdf, args.output, args.case, args.robot_id)
+    path = prepare(wenao, urdf, args.output, args.case, args.robot_id, args.start_posture)
     print(path, flush=True)
     if args.mode == "prepare":
         return 0

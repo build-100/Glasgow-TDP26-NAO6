@@ -50,6 +50,12 @@ class WholeBodyTests(unittest.TestCase):
                         self.assertLessEqual(abs(q-t.poses[i-1][joint])/dt, lim.speed*SPEED_FRACTION + 1e-8)
                 self.assertEqual(t.sample(t.duration+1), t.poses[-1])
 
+    def test_prone_reference_keeps_the_support_transfer_hold(self):
+        track = self.lib.compile(["StandUpFromFront"], self.stand)
+        holds = [b-a for a, b, p, q in zip(track.times, track.times[1:], track.poses, track.poses[1:])
+                 if p == q]
+        self.assertTrue(any(abs(dt - 0.45) < 1e-8 for dt in holds))
+
     def test_feedback_completion_for_walk_kick_front_back(self):
         for skill, start in (("WALK","upright"), ("KICK_FORWARD","upright"),
                              ("GET_UP","front"), ("GET_UP","back")):
@@ -108,6 +114,15 @@ class WholeBodyTests(unittest.TestCase):
             self.assertEqual(filt.update(1, acc), "moving")
             self.assertEqual(filt.update(1.3, acc), expected)
 
+    def test_prone_contact_peaks_and_invalid_sample_recovery(self):
+        filt = PostureFilter()
+        for i in range(90):
+            state = filt.update(i * 0.016, (-1.9 if i % 2 else -17.5, 0.0, -0.2))
+        self.assertEqual(state, "front")
+        self.assertEqual(filt.update(2, (float("nan"), 0, 0)), "moving")
+        self.assertEqual(filt.update(2.016, (0, 0, -9.81)), "moving")
+        self.assertEqual(filt.update(2.32, (0, 0, -9.81)), "upright")
+
     def test_concrete_device_commands_and_encoders(self):
         model = matched_model(self.urdf, SOURCE)
         mock_devices = {}
@@ -131,10 +146,16 @@ class WholeBodyTests(unittest.TestCase):
         for name in model.limits:
             mock_devices[name].setPosition.assert_called_with(target[LEFT_HIP if name == RIGHT_HIP else name])
         mock_devices["RWristYaw"].setPosition.assert_called_with(0.0)
+        knee = mock_devices["RKneePitch"]
+        knee.getMaxTorque.return_value = 8.0
+        devices.write(target, recovering=True)
+        knee.setAvailableTorque.assert_called_with(8.0)
+        devices.write(target)
+        knee.setAvailableTorque.assert_called_with(model.limits["RKneePitch"].effort)
 
-    def test_four_independent_worlds_and_optional_ros_launch(self):
+    def test_independent_worlds_and_optional_ros_launch(self):
         with tempfile.TemporaryDirectory() as tmp:
-            for case in ("walk", "kick", "front", "back", "ros"):
+            for case in ("walk", "turn_left", "turn_right", "kick", "front", "back", "ros"):
                 path = prepare(SOURCE, self.urdf, Path(tmp)/case, case, "red1")
                 world = path.read_text()
                 self.assertIn('EXTERNPROTO "../protos/NaoV6.proto"', world)

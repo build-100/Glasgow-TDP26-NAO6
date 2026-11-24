@@ -22,6 +22,7 @@ CLIPS = {
 LEFT_HIP, RIGHT_HIP = "LHipYawPitch", "RHipYawPitch"
 LOCKED = {"LHand", "RHand", "LWristYaw", "RWristYaw"}
 SPEED_FRACTION = 0.85
+KICK_ROLL_JOINTS = {"LHipRoll", "RHipRoll", "LAnkleRoll", "RAnkleRoll"}
 
 
 def checked_bytes(path, expected):
@@ -164,8 +165,17 @@ class Library:
                 for name in model.names:
                     # Sparse channels keep the last value. The mechanical master is the left hip.
                     if name in pose:
-                        target[name] = model.limits[name].bound(pose[name])
+                        angle = pose[name]
+                        if clip == "RightShoot" and name in KICK_ROLL_JOINTS:
+                            # Keep the lateral transfer over the stance foot during the swing.
+                            angle *= 0.55
+                        target[name] = model.limits[name].bound(angle)
                 track.append(target, stamp - last_stamp, model)
+                if clip.startswith("StandUp") and stamp == 0:
+                    track.append(target, 0.80, model)
+                elif clip == "StandUpFromFront" and stamp == 2.50:
+                    # Let the feet take the load before the source clip extends both legs.
+                    track.append(target, 0.45, model)
                 last_stamp = stamp
         return track
 
@@ -189,9 +199,22 @@ def posture(acceleration):
 class PostureFilter:
     def __init__(self):
         self.candidate, self.since = None, 0.0
+        self.gravity = None
+        self.previous_time = None
 
     def update(self, now, acceleration):
-        value = posture(acceleration)
+        if not all(math.isfinite(v) for v in acceleration):
+            self.gravity = self.candidate = self.previous_time = None
+            return "moving"
+        if self.gravity is None or now <= self.previous_time:
+            self.gravity = tuple(acceleration)
+            self.candidate = None
+        else:
+            # Ground contact produces alternating acceleration peaks even when lying still.
+            memory = 0.875 ** ((now - self.previous_time) / 0.016)
+            self.gravity = tuple(memory * g + (1.0 - memory) * a for g, a in zip(self.gravity, acceleration))
+        self.previous_time = now
+        value = posture(self.gravity)
         if value != self.candidate:
             self.candidate, self.since = value, now
         return value if now - self.since >= 0.20 else "moving"
@@ -222,7 +245,7 @@ class Executor:
         if skill == "GET_UP":
             if attitude not in ("front", "back"):
                 raise ValueError("GET_UP requires a stable front or back fall")
-            clips = ["StandUpFromFront" if attitude == "front" else "StandUpFromBack", "StandInit"]
+            clips = ["StandInit", "StandUpFromFront" if attitude == "front" else "StandUpFromBack", "StandInit"]
         elif attitude != "upright":
             raise ValueError("Upright posture required")
         elif skill == "WALK" and primitive in WALKS:

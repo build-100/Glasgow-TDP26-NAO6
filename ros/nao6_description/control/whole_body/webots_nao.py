@@ -11,6 +11,8 @@ class Devices:
     def __init__(self, robot, model, step_ms):
         self.motors = {}
         self.encoders = {}
+        self.normal_effort = {}
+        self.recovering = False
         for name, limit in model.limits.items():
             motor = robot.getDevice(name)
             if motor is None or motor.getPositionSensor() is None:
@@ -19,6 +21,7 @@ class Devices:
                             motor.getMaxVelocity(), motor.getMaxTorque())
             motor.setVelocity(model.limits[name].speed)
             motor.setAvailableTorque(model.limits[name].effort)
+            self.normal_effort[name] = model.limits[name].effort
             encoder = motor.getPositionSensor()
             encoder.enable(step_ms)
             self.motors[name], self.encoders[name] = motor, encoder
@@ -37,7 +40,13 @@ class Devices:
             raise RuntimeError("Invalid joint encoder sample")
         return measured, self.acc.getValues()
 
-    def write(self, target):
+    def write(self, target, recovering=False):
+        if recovering != self.recovering:
+            # Lifting the torso uses the simulated motor ratings from NaoV6.proto.
+            # Ordinary skills revert to the lower of the description and plant limits.
+            for name, motor in self.motors.items():
+                motor.setAvailableTorque(motor.getMaxTorque() if recovering else self.normal_effort[name])
+            self.recovering = recovering
         for name, motor in self.motors.items():
             motor.setPosition(target[LEFT_HIP if name == RIGHT_HIP else name])
 
@@ -52,7 +61,7 @@ class RosPort:
         self.inbox = Queue(maxsize=32)
         rospy.init_node("nao6_body_" + robot_id, anonymous=False, disable_signals=True)
         self.joints = rospy.Publisher("/joint_states_" + robot_id, JointState, queue_size=2)
-        self.results = rospy.Publisher("/skill_result_" + robot_id, String, queue_size=32)
+        self.results = rospy.Publisher("/skill_result_" + robot_id, String, queue_size=32, latch=True)
         self.attitude = rospy.Publisher("/posture_" + robot_id, String, queue_size=1, latch=True)
         self.sub = rospy.Subscriber("/skill_request_" + robot_id, String, self.receive, queue_size=20)
         self.previous = None
@@ -135,6 +144,8 @@ class Dispatcher:
             self.recovery_id -= 1
             self.recovery_armed = False
             self.emit(self.current, "RUNNING", now, "automatic recovery from " + attitude)
+            # Start from this encoder sample, just as for a requested recovery.
+            target, _ = self.exe.tick(now, measured, attitude)
         return target
 
 
@@ -162,11 +173,24 @@ def run(config):
         ball = robot.getFromDef("TEST_BALL")
         trial = config["case"]
         expected = {"front": "front", "back": "back"}.get(trial, "upright")
-        requests = [{"skill": "GET_UP"}] if trial in ("front", "back") else [
-            {"skill": "STAND"}, {"skill": "WALK" if trial == "walk" else "KICK_FORWARD", "ball_ready": True}]
+        if trial in ("front", "back"):
+            requests = [{"skill": "GET_UP"}]
+        elif trial == "kick":
+            requests = [{"skill": "STAND"}, {"skill": "KICK_FORWARD"}]
+        else:
+            primitive = {"walk": "forward", "turn_left": "left", "turn_right": "right"}[trial]
+            requests = [{"skill": "STAND"}, {"skill": "WALK", "primitive": primitive}]
         issued, finished = 0, None
         body_start = ball_start = None
         floor_origin = None
+        start_posture = None
+        spawn_contacts = len(torso.getContactPoints(True))
+        if trial in ("front", "back") and spawn_contacts:
+            report = dict(case=trial, passed=False, spawn_contacts=spawn_contacts,
+                          reason="Recovery fixture started in contact before settling")
+            Path(config["report"]).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+            robot.simulationQuit(1)
+            return
     while robot.step(step_ms) != -1:
         now = robot.getTime()
         measured, acceleration = devices.read()
@@ -188,6 +212,7 @@ def run(config):
             elif now >= 1.0 and issued < len(requests) and dispatch.current is None:
                 ready = attitude == expected if issued == 0 else attitude == "upright"
                 if ready:
+                    start_posture = attitude
                     body_start = list(torso.getPosition())
                     ball_start = list(ball.getPosition())
                     # Freeze the forward axis at skill dispatch for the trial metric.
@@ -208,7 +233,9 @@ def run(config):
             if now > 50.0:
                 finished = now
                 emit(issued, "FAILED", now, "trial timed out waiting for initial pose or skill")
-        devices.write(dispatch.tick(now, measured, attitude, automatic=live))
+        # Let the simulated robot land and the initial gravity estimate settle at startup.
+        target = dispatch.tick(now, measured, attitude, automatic=live and now >= 1.0)
+        devices.write(target, recovering=dispatch.exe.active == "GET_UP")
         if not live and finished is not None and now - finished >= 0.50:
             pos, ball_pos = torso.getPosition(), ball.getPosition()
             def forward_change(end, start):
@@ -217,17 +244,32 @@ def run(config):
                 return sum((end[i] - start[i]) * floor_origin[i] for i in range(2))
             walk_m = forward_change(pos, body_start)
             ball_m = forward_change(ball_pos, ball_start)
+            yaw_change = None
+            if floor_origin is not None:
+                final = torso.getOrientation()
+                fx, fy = floor_origin
+                yaw_change = math.atan2(fx * final[3] - fy * final[0], fx * final[0] + fy * final[3])
             complete = bool(events and events[-1]["status"] == "SUCCEEDED" and issued == len(requests))
             if trial == "walk":
                 objective = walk_m is not None and walk_m > 0.02
+            elif trial in ("turn_left", "turn_right"):
+                direction = 1 if trial == "turn_left" else -1
+                objective = yaw_change is not None and direction * yaw_change > math.radians(2)
             elif trial == "kick":
                 objective = ball_m is not None and ball_m > 0.02
             else:
                 objective = body_start is not None and pos[2] - body_start[2] > 0.10 and pos[2] > 0.22
             passed = complete and attitude == "upright" and objective
+            final_target = dispatch.exe.hold
+            encoder_error = max(abs(measured[n] - final_target[LEFT_HIP if n == RIGHT_HIP else n])
+                                for n in measured)
             report = dict(case=trial, passed=passed, final_posture=attitude, events=events,
                           torso_forward_m=walk_m, ball_forward_m=ball_m, torso_height_m=pos[2],
-                          torso_start_m=body_start, ball_start_m=ball_start, end_time_s=now)
+                          torso_start_m=body_start, ball_start_m=ball_start, end_time_s=now,
+                          spawn_contacts=spawn_contacts, dispatch_posture=start_posture,
+                          final_encoder_error_rad=encoder_error)
+            if trial in ("turn_left", "turn_right"):
+                report["yaw_change_deg"] = math.degrees(yaw_change) if yaw_change is not None else None
             Path(config["report"]).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
             print(json.dumps(report), flush=True)
             robot.simulationQuit(0 if passed else 1)
