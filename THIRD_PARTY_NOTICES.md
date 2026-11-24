@@ -12,10 +12,14 @@ Original and adapted model descriptions and mesh assets are excluded from the
 root restricted-use notice and retain upstream terms. `source_manifest.json`
 records original URLs and hashes. `adaptation_report.json` records modifications.
 
-The source repository also contains Webots-specific files with different
-notices. No Webots PROTO, Webots motion trajectory or Glasgow controller code
-is included in this repository. Do not infer permission for excluded files
-from the copied root licence.
+The [whole-body workbench](ros/nao6_description/control/whole_body/README.md)
+adapts the motion selection/dispatch approach of upstream `Wenao/controllers/Utils/Consts.py`
+and `RedForwardA/RedForwardA.py` at the same pinned revision. Its Python implementation
+is written for this project. It loads seven original motion files, the NaoV6 PROTO
+and its wrist submodels from a verified local cache or upstream checkout. Those
+asset bytes are obtained on the user's machine. The PROTO headers specify
+Cyberbotics' [Webots asset licence](https://cyberbotics.com/webots_assets_license).
+Generated local worlds use those assets with Webots and retain their notices.
 
 No private GEVD implementation, research manuscript or source course handout is
 included. The planning scaffold and adaptation/validation scripts were written

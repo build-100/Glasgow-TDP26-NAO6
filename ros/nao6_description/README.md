@@ -1,5 +1,9 @@
 # NAO6 model and launch package
 
+For a runnable single-robot project with motor commands and feedback, use the
+[whole-body motion workbench](control/whole_body/README.md). It generates a Webots
+trial or starts a ROS Noetic skill port with `roslaunch nao6_description whole_body.launch`.
+
 ## Selected source
 
 The source is [NAOH25V60.urdf](https://github.com/RajasJoshi/UoG_Robotics_TDP4/blob/8a0949302aac5d610339fa02f3e4cfc437abb17d/Wenao/protos/NAOH25V60.urdf).
@@ -9,8 +13,8 @@ Original SHA256: `327dce62542ecd1327acf3fa7c5ec7b59274d44ce6c09a9ade3417cc39f132
 This is the selected public V6 adaptation source, not a manufacturer-certified
 release or an already validated Gazebo motion package. The original XML is
 retained as `urdf/NAOH25V60_source.urdf`; assets are under `meshes/`. Original
-hashes/URLs and upstream licence are included. No Webots-only PROTO/motion files
-or ROS 2 launch files are used.
+hashes/URLs and upstream licence are included. The local motion workbench obtains
+the matching Webots assets from the pinned upstream revision at preparation time.
 
 ## Supplied descriptions
 
@@ -28,12 +32,10 @@ moving joints from 25 to 21: 11 coupled-leg DOFs, 8 shoulder/elbow DOFs and 2 he
 DOFs. It does not freeze arm balance or recovery motion. The full model remains
 available for controllers that expect hand or wrist joints.
 
-The inspected upstream walking, forward-kick and front/back get-up reference
-trajectories have no wrist-yaw channels. This motivates the optional wrist lock,
-but does not validate those trajectories for Gazebo/real NAO. In particular,
-upstream recovery references may command the two hip-yaw-pitch entries differently;
-the real coupling must be respected. No reference motion is copied as a working
-controller. If the selected backend needs wrists, use the full description.
+The selected RightShoot trajectory includes wrist and hand channels. The workbench
+omits them and retains shoulder, elbow, leg and head control. Its back-recovery
+reference contains conflicting left/right hip-yaw-pitch targets in 13 frames.
+The executor sends the master reference to both hip motors.
 
 Both upper and lower RGB camera frames remain attached to the moving head.
 They are not assumed to form a calibrated stereo pair. Frame geometry alone
@@ -107,15 +109,9 @@ There is no stabilising gait: unpausing can let the robot fall. No fake joint
 state publisher is connected to this physical scene. The ball uses provisional
 dimensions/material values; validate actual dynamics before using it as evidence.
 
-The next integration task is a validated NAO motion backend for STAND/STOP,
-WALK, HEAD_LOOK, KICK_FORWARD and GET_UP. There is no separate RECEIVE skill:
-wait until the ball stops, approach/re-detect with WALK/HEAD_LOOK, align, STOP,
-then KICK_FORWARD. `ros_control` alone would not supply balanced motion. Prefer available
-school software; firmware/controller compatibility remains unresolved.
-
-The global RViz planning demo and local Gazebo skill demos can run independently.
-Record actual states/outcomes and screen video. `rosbag play` replays messages;
-it does not by itself reconstruct a Gazebo world or reproduce contact dynamics.
+The motion workbench supports STAND, STOP, WALK, HEAD_LOOK, KICK_FORWARD and GET_UP.
+The local behaviour waits for the ball to settle, approaches, aligns and requests a kick.
+Record actual states and outcomes. Replay the recorded messages for the global RViz presentation.
 
 ## Validation status
 
