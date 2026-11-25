@@ -1,4 +1,4 @@
-# NAO6 whole-body motion demo
+# Low-level control demonstration on the team NAO6 model
 
 [Watch or download the video (MP4, 38 s)](NAO6_Whole_Body_Demo.mp4). Six independent Webots R2023b trials show one NAO6 on a level floor. Each trial ends with the robot upright. A separate camera recorded the scene.
 
