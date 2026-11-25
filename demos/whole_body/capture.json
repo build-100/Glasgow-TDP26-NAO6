@@ -1,0 +1,322 @@
+{
+  "capture": "Separate observer camera in Webots R2023b, 960x540; English titles below image. Camera output was never used by the motion controller.",
+  "scope": "Six fresh single-robot simulation trials on a level floor. Front/back trials dispatch GET_UP from a settled fallen pose; autonomous ROS fall triggers were tested separately.",
+  "video_sha256": "7d21f5723068b359da66a2b99c58ba0583ab790ae682d3c6277dd516b6d3e85f",
+  "seconds": "37.968000",
+  "segments": {
+    "walk": {
+      "start_s": 0.0,
+      "end_s": 9.5,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "walk",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "STAND"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 1.6,
+            "reason": "final encoders and upright posture settled"
+          },
+          {
+            "sequence_id": 1,
+            "status": "RUNNING",
+            "time_s": 1.616,
+            "reason": "WALK"
+          },
+          {
+            "sequence_id": 1,
+            "status": "SUCCEEDED",
+            "time_s": 8.928,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": 0.4635045390766548,
+        "ball_forward_m": 0.0,
+        "torso_height_m": 0.3209009955969453,
+        "torso_start_m": [
+          0.009181963708864815,
+          -3.615295402031816e-08,
+          0.3210508645402272
+        ],
+        "ball_start_m": [
+          1.5,
+          -0.055,
+          0.049945063829047905
+        ],
+        "end_time_s": 9.456,
+        "spawn_contacts": 0,
+        "dispatch_posture": "upright",
+        "final_encoder_error_rad": 0.0028550160009724324
+      }
+    },
+    "turn_left": {
+      "start_s": 9.5,
+      "end_s": 13.533,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "turn_left",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "STAND"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 1.6,
+            "reason": "final encoders and upright posture settled"
+          },
+          {
+            "sequence_id": 1,
+            "status": "RUNNING",
+            "time_s": 1.616,
+            "reason": "WALK"
+          },
+          {
+            "sequence_id": 1,
+            "status": "SUCCEEDED",
+            "time_s": 3.456,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": 0.002464508629282252,
+        "ball_forward_m": 0.0,
+        "torso_height_m": 0.3209239400084,
+        "torso_start_m": [
+          0.009181963708864815,
+          -3.615295402031816e-08,
+          0.3210508645402272
+        ],
+        "ball_start_m": [
+          1.5,
+          -0.055,
+          0.049945063829047905
+        ],
+        "end_time_s": 3.984,
+        "spawn_contacts": 0,
+        "dispatch_posture": "upright",
+        "final_encoder_error_rad": 3.29766870721393e-05,
+        "yaw_change_deg": 4.818199612640921
+      }
+    },
+    "turn_right": {
+      "start_s": 13.533,
+      "end_s": 16.833,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "turn_right",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "STAND"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 1.6,
+            "reason": "final encoders and upright posture settled"
+          },
+          {
+            "sequence_id": 1,
+            "status": "RUNNING",
+            "time_s": 1.616,
+            "reason": "WALK"
+          },
+          {
+            "sequence_id": 1,
+            "status": "SUCCEEDED",
+            "time_s": 2.704,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": -0.004790579075999526,
+        "ball_forward_m": 0.0,
+        "torso_height_m": 0.3207660080290965,
+        "torso_start_m": [
+          0.009181963708864815,
+          -3.615295402031816e-08,
+          0.3210508645402272
+        ],
+        "ball_start_m": [
+          1.5,
+          -0.055,
+          0.049945063829047905
+        ],
+        "end_time_s": 3.232,
+        "spawn_contacts": 0,
+        "dispatch_posture": "upright",
+        "final_encoder_error_rad": 0.02009183547667383,
+        "yaw_change_deg": -7.418349102562281
+      }
+    },
+    "kick": {
+      "start_s": 16.833,
+      "end_s": 22.0,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "kick",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "STAND"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 1.6,
+            "reason": "final encoders and upright posture settled"
+          },
+          {
+            "sequence_id": 1,
+            "status": "RUNNING",
+            "time_s": 1.616,
+            "reason": "KICK_FORWARD"
+          },
+          {
+            "sequence_id": 1,
+            "status": "SUCCEEDED",
+            "time_s": 4.5920000000000005,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": -0.000678223196433946,
+        "ball_forward_m": 1.0183877211192265,
+        "torso_height_m": 0.3208552136456221,
+        "torso_start_m": [
+          0.009181963708864815,
+          -3.615295402031816e-08,
+          0.3210508645402272
+        ],
+        "ball_start_m": [
+          0.15,
+          -0.055,
+          0.049945063829047905
+        ],
+        "end_time_s": 5.12,
+        "spawn_contacts": 0,
+        "dispatch_posture": "upright",
+        "final_encoder_error_rad": 0.009080885966255765
+      }
+    },
+    "front": {
+      "start_s": 22.0,
+      "end_s": 29.8,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "front",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "GET_UP"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 7.216,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": -0.36280485764351594,
+        "ball_forward_m": 0.0,
+        "torso_height_m": 0.32092447969910803,
+        "torso_start_m": [
+          -0.055264417146207306,
+          -0.0004476202829886487,
+          0.20117441498169383
+        ],
+        "ball_start_m": [
+          1.5,
+          -0.055,
+          0.04994506373274086
+        ],
+        "end_time_s": 7.744,
+        "spawn_contacts": 0,
+        "dispatch_posture": "front",
+        "final_encoder_error_rad": 0.0001177984374189959
+      }
+    },
+    "back": {
+      "start_s": 29.8,
+      "end_s": 37.967,
+      "lf_sha256": {
+        "webots_nao.py": "d55980bda4de7916750bc76f5ac6a095e7e0483251e6425df66179facf8476e6",
+        "nao6_motion.py": "bdb87f2e90f0a4c79510b7eb37e13fe1e6466709ce314cfeb4ae9ed212d61e39"
+      },
+      "trial": {
+        "case": "back",
+        "passed": true,
+        "final_posture": "upright",
+        "events": [
+          {
+            "sequence_id": 0,
+            "status": "RUNNING",
+            "time_s": 1.008,
+            "reason": "GET_UP"
+          },
+          {
+            "sequence_id": 0,
+            "status": "SUCCEEDED",
+            "time_s": 7.6160000000000005,
+            "reason": "final encoders and upright posture settled"
+          }
+        ],
+        "torso_forward_m": -0.05710126513672002,
+        "ball_forward_m": 0.0,
+        "torso_height_m": 0.3209241300853145,
+        "torso_start_m": [
+          -0.004752104234729215,
+          -7.415093747388976e-05,
+          0.058210416168685164
+        ],
+        "ball_start_m": [
+          1.5,
+          -0.055,
+          0.04994506373274086
+        ],
+        "end_time_s": 8.144,
+        "spawn_contacts": 0,
+        "dispatch_posture": "back",
+        "final_encoder_error_rad": 3.139191573198197e-05
+      }
+    }
+  }
+}

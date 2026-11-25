@@ -4,12 +4,9 @@ Keep this repository focused on NAO6 model resources, ROS launch/adaptation and
 a minimal high-level planning interface. Do not add private research papers,
 full strategy/reward designs or earlier team slide packs without a new request.
 
-Target Ubuntu 20.04 / ROS Noetic / Gazebo Classic 11. Keep global RViz and local
-Gazebo demonstrations independently runnable. Preserve leg/head/arm joints,
-inertia, collision geometry and camera/IMU frames. Hand/finger and wrist-yaw
-articulation is fixed by the optional simplified description; use the full
-description if the selected controller requires those joints. Preserve all
-shoulder/elbow, leg and head motion. Do not invent a gait controller.
+Use `ros/nao6_description/urdf/nao6_simplified.urdf` as the team's shared model for joints and frames. The ROS Noetic whole-body launch loads this URDF. Webots R2023b runs its matching Glasgow `NaoV6.proto` and motion clips. Preserve the leg, head and shoulder/elbow joints, coupled hips, inertia, contact geometry and camera/IMU frames. Hands and wrist yaw are fixed in the shared description. Keep the full URDF as a reference and the collision-visual derivative for the global RViz view.
+
+Keep the team model in the ROS package. Put single-robot simulation evidence under `demos/whole_body/` as low-level control validation. Use V1–V4 for the historical global RViz demos.
 
 There is no separate RECEIVE skill: wait for ball settlement, WALK/HEAD_LOOK
 to approach and align, STOP, then KICK_FORWARD. No moving-ball interception or
