@@ -1,4 +1,10 @@
-# NAO6 RViz demonstrations
+# NAO6 demonstrations
+
+## Low-level control
+
+The [whole-body control demo](whole_body/README.md) checks the [team NAO6 model](../ros/nao6_description/README.md) in six Webots trials. It includes a 38-second film and measurements for walking, turning, kicking and recovery.
+
+## Global RViz demonstrations
 
 Four preserved integration milestones for Ubuntu 20.04 / ROS Noetic.
 
