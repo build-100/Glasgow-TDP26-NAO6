@@ -2,9 +2,10 @@
 
 Group repository for the University of Glasgow TDP course project.
 
-For a single robot that accepts walking, kicking and recovery commands, start with
-the [NAO6 whole-body motion workbench](ros/nao6_description/control/whole_body/README.md).
-It pairs the selected V6 joint description with the Glasgow project's Webots body and motion references.
+## Team robot model
+
+All team members use the [NAO6 simplified URDF](ros/nao6_description/urdf/nao6_simplified.urdf) for joint names, limits and frames. It has 21 independent moving coordinates. For physical simulation, the [whole-body workbench](ros/nao6_description/control/whole_body/README.md) loads the matching Glasgow `NaoV6.proto` in Webots R2023b. The shared [ROS Noetic launch file](ros/nao6_description/launch/whole_body.launch) loads the team URDF and starts the controller. See the [team model guide](ros/nao6_description/README.md) for setup and the RViz display geometry.
+
 The repository also contains ROS launch files, a minimal planning scaffold and four global RViz demonstrations.
 Private research and learned strategy/reward implementations are not included.
 
@@ -20,9 +21,11 @@ Private research and learned strategy/reward implementations are not included.
 Start with [model setup and launch instructions](ros/nao6_description/README.md).
 The team presentation uses Ubuntu 20.04, ROS Noetic and RViz. Webots R2023b runs the independent local motion trials.
 
-## Demonstrations
+## Low-level control demonstration
 
-[Watch the 38-second NAO6 whole-body demo](demos/whole_body/NAO6_Whole_Body_Demo.mp4) for forward walking, left and right turns, a fixed right-foot kick and recovery from two fallen positions. The [chapter guide](demos/whole_body/README.md) links each filmed trial to the model, controls and measured results.
+[Watch the 38-second control demo](demos/whole_body/NAO6_Whole_Body_Demo.mp4) to see the team model walk, turn, kick and get back up in simulation. The [chapter guide and measurements](demos/whole_body/README.md) show what each trial verified.
+
+## Global RViz demonstrations
 
 - [V1: initial global integration demo](demos/v1/README.md): red attack with stationary blue players.
 - [V2: two-team fixed-route demo](demos/v2/README.md): both teams move, a one-shot 40% contest rule,
