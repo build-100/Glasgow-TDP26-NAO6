@@ -1,8 +1,8 @@
-# NAO6 model and launch package
+# Team NAO6 model and launch package
 
-For a runnable single-robot project with motor commands and feedback, use the
-[whole-body motion workbench](control/whole_body/README.md). It generates a Webots
-trial or starts a ROS Noetic skill port with `roslaunch nao6_description whole_body.launch`.
+Use [nao6_simplified.urdf](urdf/nao6_simplified.urdf) as the shared joint and frame definition for team development. The [ROS Noetic launch file](launch/whole_body.launch) loads this exact file into the robot's `robot_description` parameter. The matching Webots body is [NaoV6.proto at the team's pinned Glasgow revision](https://github.com/RajasJoshi/UoG_Robotics_TDP4/blob/8a0949302aac5d610339fa02f3e4cfc437abb17d/Wenao/protos/NaoV6.proto). The [controller and workbench](control/whole_body/README.md) map the 21 independent joint targets to that body and read its encoders. To start one robot after workspace setup, use `roslaunch nao6_description whole_body.launch` with Webots R2023b available.
+
+The [low-level control demonstration](../../demos/whole_body/README.md) records six tests of this model. Global RViz displays use the same joint structure with the lighter collision-visual geometry.
 
 ## Selected source
 
@@ -97,7 +97,7 @@ roslaunch nao6_description display.launch variant:=full
 The joint sliders are for description/TF inspection, not walking validation.
 The supplied initial angles are an inspection pose, not a calibrated balance pose.
 
-## Gazebo inspection
+## Optional legacy Gazebo inspection
 
 ```bash
 roslaunch nao6_description gazebo_model.launch
@@ -109,9 +109,7 @@ There is no stabilising gait: unpausing can let the robot fall. No fake joint
 state publisher is connected to this physical scene. The ball uses provisional
 dimensions/material values; validate actual dynamics before using it as evidence.
 
-The motion workbench supports STAND, STOP, WALK, HEAD_LOOK, KICK_FORWARD and GET_UP.
-The local behaviour waits for the ball to settle, approaches, aligns and requests a kick.
-Record actual states and outcomes. Replay the recorded messages for the global RViz presentation.
+The active motion workbench uses Webots R2023b for STAND, STOP, WALK, HEAD_LOOK, KICK_FORWARD and GET_UP. The kick trial starts with a settled, aligned ball. During team integration the local behaviour module must establish those conditions before requesting the kick.
 
 ## Validation status
 
