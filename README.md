@@ -22,6 +22,8 @@ The team presentation uses Ubuntu 20.04, ROS Noetic and RViz. Webots R2023b runs
 
 ## Demonstrations
 
+[Watch the 38-second NAO6 whole-body demo](demos/whole_body/NAO6_Whole_Body_Demo.mp4) for forward walking, left and right turns, a fixed right-foot kick and recovery from two fallen positions. The [chapter guide](demos/whole_body/README.md) links each filmed trial to the model, controls and measured results.
+
 - [V1: initial global integration demo](demos/v1/README.md): red attack with stationary blue players.
 - [V2: two-team fixed-route demo](demos/v2/README.md): both teams move, a one-shot 40% contest rule,
   possession turnover and a counterattack. A selected seed reproduces the presentation story.
